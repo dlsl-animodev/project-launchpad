@@ -21,8 +21,17 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm@8
+      - name: Enable Corepack and prepare pnpm
+        run: |
+          # Use Corepack (bundled with Node 16+/Node 20) to provide pnpm reliably
+          corepack enable
+          corepack prepare pnpm@8 --activate
+
+      - name: Verify pnpm is available
+        run: |
+          node -v
+          npm -v
+          pnpm -v
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
