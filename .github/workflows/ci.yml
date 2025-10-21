@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,47 +20,37 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
+          cache: 'npm'
 
-      - name: Enable Corepack and prepare pnpm
-        run: |
-          # Use Corepack (bundled with Node 16+/Node 20) to provide pnpm reliably
-          corepack enable
-          corepack prepare pnpm@8 --activate
-
-      - name: Verify pnpm is available
+      - name: Verify Node.js and npm
         run: |
           node -v
           npm -v
-          pnpm -v
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Build
-        run: pnpm run build
+        run: npm run build
 
       - name: Test (if script present)
         run: |
-          # Run tests only if a test script exists in package.json
-          if grep -q '"test"' package.json; then
-            pnpm run test
+          if npm pkg get scripts.test | grep -qv '{}'; then
+            npm test
           else
-            echo "No test script found in package.json - skipping tests"
+            echo "No test script found - skipping"
           fi
 
       - name: Lint
-        run: pnpm run lint
+        run: npm run lint --if-present
 
       - name: Prepare artifact for preview
         run: |
-          # Package the minimal files required to preview the Next.js build locally.
           mkdir -p preview-artifact
           cp -r .next preview-artifact/.next || true
           cp -r public preview-artifact/public || true
           cp package.json preview-artifact/
-          cp pnpm-lock.yaml preview-artifact/ || true
-          # Include next.config and environment files if present
+          cp package-lock.json preview-artifact/ || true
           test -f next.config.mjs && cp next.config.mjs preview-artifact/ || true
           test -f next.config.ts && cp next.config.ts preview-artifact/ || true
 
