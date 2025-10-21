@@ -1,0 +1,46 @@
+.marqueeWrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  align-items: center;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.marqueeWrapper:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.marqueeGroup {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.marqueeIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  border-radius: 0.25rem;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
