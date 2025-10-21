@@ -1,18 +1,35 @@
 import type { Metadata } from "next";
-import { Poppins, Boldonse } from "next/font/google";
+import { Pacifico, Bebas_Neue, Inter, Rubik } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-    variable: "--font-poppins",
+// removed Poppins and Boldonse per request
+
+const pacifico = Pacifico({
+    variable: "--font-pacifico",
     subsets: ["latin"],
-    weight: ["400", "700"],
+    weight: "400",
     display: "swap",
 });
 
-const boldonse = Boldonse({
-    variable: "--font-boldonse",
+const bebas = Bebas_Neue({
+    variable: "--font-bebas",
     subsets: ["latin"],
     weight: "400",
+    display: "swap",
+});
+
+const inter = Inter({
+    variable: "--font-inter",
+    subsets: ["latin"],
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    display: "swap",
+});
+
+const rubik = Rubik({
+    variable: "--font-rubik",
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "700"],
+    display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +45,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${poppins.variable} ${boldonse.variable} antialiased`}
+                className={`${pacifico.variable} ${bebas.variable} ${inter.variable} ${rubik.variable} antialiased`}
             >
                 {children}
             </body>

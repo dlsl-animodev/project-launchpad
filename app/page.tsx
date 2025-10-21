@@ -1,14 +1,9 @@
-import Spline from '@splinetool/react-spline/next';
-
-
-const HomePage = async () => {
+const LandingPage = () => {
     return (
-        <div>
-<Spline
-        scene="https://prod.spline.design/e4jBwO4YKSUSHDyL/scene.splinecode" 
-      />
+        <div>   
+            Landing Page
         </div>
     )
 };
 
-export default HomePage; 
+export default LandingPage;
