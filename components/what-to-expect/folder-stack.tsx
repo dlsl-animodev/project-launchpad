@@ -9,7 +9,7 @@ interface FolderStackProps {
 const FolderStack: React.FC<FolderStackProps> = ({ index, title, fillColor }) => {
     return (
         <motion.div
-            className="sticky top-24 z-0 "
+            className="sticky top-[10rem] lg:top-[6rem] z-0 "
             initial={{ opacity: 0, y: 40 + index * 20, scale: 0.98 }}
             whileInView={{ opacity: 1, y: index * 8, scale: 1 }}
             transition={{ duration: 0.35 }}

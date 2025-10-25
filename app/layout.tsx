@@ -1,3 +1,4 @@
+import SmoothScroll from "@/components/smooth-scroll";
 import type { Metadata } from "next";
 import { Pacifico, Bebas_Neue, Inter, Rubik } from "next/font/google";
 import "./globals.css";
@@ -45,9 +46,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${pacifico.variable} ${bebas.variable} ${inter.variable} ${rubik.variable} antialiased`}
+                className={`${pacifico.variable} ${bebas.variable} ${inter.variable} ${rubik.variable}`}
             >
-                {children}
+                <SmoothScroll>{children}</SmoothScroll>
             </body>
         </html>
     );
