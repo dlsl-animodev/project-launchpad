@@ -31,19 +31,19 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
             <div className="absolute top-3 right-4 z-50">
                 <div className="flex gap-2 items-center">
                     <Minus
-                        className="bg-accent  border-retro"
+                        className="bg-background  border-retro"
                         size={27}
-                        color="white"
+                        color="black"
                     />
                     <Square
-                        className="bg-accent  border-retro p-1"
+                        className="bg-background  border-retro p-1"
                         size={27}
-                        color="white"
+                        color="black"
                     />
                     <X
-                        className="bg-accent  border-retro"
+                        className="bg-background  border-retro"
                         size={27}
-                        color="white"
+                        color="black"
                     />
                 </div>
             </div>
@@ -70,9 +70,9 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                         {officer.role}
                     </p>
                     <X
-                        className="bg-accent  border-retro"
+                        className="bg-primary border-retro"
                         size={27}
-                        color="white"
+                        color="black"
                     />
                 </div>
                 <p className="text-sm mt-2">
