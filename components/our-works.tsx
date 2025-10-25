@@ -212,7 +212,7 @@ const MobileView = () => {
                 {/* Sticky Preview */}
                 <div className="sticky top-[9rem] z-10">
                     <motion.section
-                        className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto w-[90%] aspect-square"
+                        className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto aspect-square"
                         initial={{ scale: 0, y: 30, opacity: 0.8 }}
                         whileInView={{ scale: 1, y: 0, opacity: 1 }}
                         transition={{
@@ -243,7 +243,7 @@ const MobileView = () => {
                 {/* Project Info */}
                 <div className="relative z-0">
                     <motion.h2
-                        className="text-6xl mt-24 mx-4 relative z-20"
+                        className="text-6xl mt-[10rem] mx-4 relative z-20"
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.2 }}
@@ -313,7 +313,7 @@ const MobileView = () => {
             <section className="h-[180vh] relative w-full">
                 <div className="sticky top-[9rem] z-10">
                     <motion.section
-                        className="bg-accent border-retro flex flex-col items-center justify-between  aspect-square p-4 mx-auto w-[90%]"
+                        className="bg-accent border-retro flex flex-col items-center justify-between  aspect-square p-4 mx-auto"
                         initial={{ scale: 0, y: 30, opacity: 0.8 }}
                         whileInView={{ scale: 1, y: 0, opacity: 1 }}
                         transition={{
@@ -343,7 +343,7 @@ const MobileView = () => {
 
                 <div className="relative z-0">
                     <motion.h2
-                        className="text-6xl mt-24 mx-4 relative z-20"
+                        className="text-6xl mt-[10rem] mx-4 relative z-20"
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.2 }}
