@@ -27,7 +27,6 @@ const MeetTheTeam = () => {
                     all backgrounds can thrive and innovate together.
                 </motion.p>
             </section>
-
             <section className="flex flex-col items-center mt-16">
                 {Object.entries(organizationBody).map(
                     ([, { title, members, }]) => (

@@ -1,17 +1,18 @@
 import { Minus, X, Square } from "lucide-react";
 
 import { motion } from "motion/react";
+import Image, { StaticImageData } from "next/image";
 
 export interface OfficerType {
     name: string;
     role: string;
-    imageUrl: string;
+    imageUrl: string | StaticImageData;
     shortDescription: string;
 }
 
 interface OffierWindowProps {
     officer: OfficerType;
-    delay? : number;
+    delay?: number;
 }
 const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
     return (
@@ -49,8 +50,14 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
             <div className="absolute top-[-10px] bg-accent border-retro  px-4 py-2">
                 <p className="text-white font-bold">{officer.name}</p>
             </div>
+            <Image 
+                src={officer.imageUrl}
+                alt={officer.name}
+                width={200}
+                height={200}
+                className="w-full h-full border-retro border-black object-cover"
+            />
 
-            <div className="w-full h-full bg-primary border-retro" />
             {/* FLOATING BOTTOM  */}
             <motion.div
                 className="absolute bottom-[-40px] right-10 w-[60%] bg-background p-2 border-retro"

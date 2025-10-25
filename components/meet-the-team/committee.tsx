@@ -21,7 +21,7 @@ const Committee: React.FC<CommitteeProps> = ({ name, officers }) => {
                 className={`flex flex-wrap justify-center gap-12 w-full space-y-6`}
             >
                 {officers.map((officer, index) => (
-                    <OfficerWindow key={officer.role} officer={officer} delay={index * 0.05} />
+                    <OfficerWindow key={officer.name} officer={officer} delay={index * 0.05} />
                 ))}
             </ul>
         </>
