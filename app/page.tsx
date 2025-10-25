@@ -8,7 +8,7 @@ import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import MeetTheTeam from "@/components/meet-the-team/meet-the-team";
 import OrganizationsTape from "@/components/organizations-tape";
-import OurWorks from "@/components/our-works";
+import OurWorks from "@/components/our-works/our-works";
 import VideoSection from "@/components/video-section";
 import WhatToExpect from "@/components/what-to-expect/what-to-expect";
 
