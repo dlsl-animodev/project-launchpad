@@ -186,33 +186,26 @@ export default OurWorks;
 
 const MobileView = () => {
     return (
-        <div className="flex flex-col items-center px-4">
+        <div className="flex flex-col items-center ">
             {/* Header Section */}
-            <div className="sticky top-0 bg-background z-20">
+            <div className="sticky top-0 bg-background z-20 w-full">
                 <motion.h2
-                    className="font-bold font-bebas text-8xl text-center"
+                    className="font-bold font-bebas text-8xl text-center "
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.2 }}
                 >
                     OUR WORKS
                 </motion.h2>
-                <motion.p
-                    className="text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2, delay: 0.1 }}
-                >
-                    A showcase of the apps and ideas we have brought to life.
-                </motion.p>
+             
             </div>
 
             {/* PROJECT 1 */}
-            <section className="h-[180vh] relative w-full">
+            <section className="h-[180vh] relative w-full px-4">
                 {/* Sticky Preview */}
-                <div className="sticky top-[9rem] z-10">
+                <div className="sticky top-[6rem] z-10">
                     <motion.section
-                        className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto aspect-square"
+                        className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto aspect-square "
                         initial={{ scale: 0, y: 30, opacity: 0.8 }}
                         whileInView={{ scale: 1, y: 0, opacity: 1 }}
                         transition={{
@@ -243,7 +236,7 @@ const MobileView = () => {
                 {/* Project Info */}
                 <div className="relative z-0">
                     <motion.h2
-                        className="text-6xl mt-[10rem] mx-4 relative z-20"
+                        className="text-5xl mt-[10rem] mx-4 relative z-20"
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.2 }}
@@ -252,7 +245,7 @@ const MobileView = () => {
                     </motion.h2>
 
                     <motion.div
-                        className="mx-4 mt-6 font-semibold text-lg flex gap-2 items-center relative z-20"
+                        className="mx-4 mt-6 font-semibold flex gap-2 items-center relative z-20"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.1 }}
@@ -267,7 +260,7 @@ const MobileView = () => {
                     </motion.div>
 
                     <motion.div
-                        className="mx-4 mt-6 font-semibold text-lg flex gap-2 items-center relative z-20"
+                        className="mx-4 mt-6 font-semibold flex gap-2 items-center relative z-20"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 }}
@@ -282,7 +275,7 @@ const MobileView = () => {
                     </motion.div>
 
                     <motion.div
-                        className="mx-4 mt-6 font-semibold text-lg flex gap-2 items-center relative z-20"
+                        className="mx-4 mt-6 font-semibold flex gap-2 items-center relative z-20"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.3 }}
@@ -310,8 +303,8 @@ const MobileView = () => {
             </section>
 
             {/* PROJECT 2 */}
-            <section className="h-[180vh] relative w-full">
-                <div className="sticky top-[9rem] z-10">
+            <section className="h-[180vh] relative w-full px-4">
+                <div className="sticky top-[6rem] z-10">
                     <motion.section
                         className="bg-accent border-retro flex flex-col items-center justify-between  aspect-square p-4 mx-auto"
                         initial={{ scale: 0, y: 30, opacity: 0.8 }}
@@ -375,6 +368,108 @@ const MobileView = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Perspiciatis molestias, dolores ducimus neque minima
                         explicabo unde ex, rerum cumque inventore quia dicta eos...
+                    </motion.p>
+                </div>
+            </section>
+
+            {/* Project 3 */}
+              <section className="h-[180vh] relative w-full px-4">
+                {/* Sticky Preview */}
+                <div className="sticky top-[6rem] z-10">
+                    <motion.section
+                        className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto aspect-square "
+                        initial={{ scale: 0, y: 30, opacity: 0.8 }}
+                        whileInView={{ scale: 1, y: 0, opacity: 1 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 90,
+                            damping: 15,
+                            delay: 0.05,
+                        }}
+                        viewport={{ amount: 0.6 }}
+                    >
+                        <div className="border-retro bg-secondary flex items-center justify-between px-4 py-2 w-[90%]">
+                            <p className="font-bold">Project Flux</p>
+                            <span className="flex items-center justify-center">
+                                <X
+                                    className="bg-accent border-retro"
+                                    size={27}
+                                    color="white"
+                                />
+                            </span>
+                        </div>
+                        <p className="text-center text-primary font-semibold">
+                            Prototype UI / WIP
+                        </p>
+                        <Button className="w-full">VIEW DETAILS</Button>
+                    </motion.section>
+                </div>
+
+                {/* Project Info */}
+                <div className="relative z-0">
+                    <motion.h2
+                        className="text-5xl mt-[10rem] mx-4 relative z-20"
+                        initial={{ opacity: 0, y: 20, scale: 0.7 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        Project Flux
+                    </motion.h2>
+
+                    <motion.div
+                        className="mx-4 mt-6 font-semibold flex gap-2 items-center relative z-20"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.1 }}
+                    >
+                        <Figma
+                            className="shrink-0 border-retro bg-primary p-1"
+                            size={40}
+                        />
+                        <p className="break-all underline underline-offset-4">
+                            https://www.figma.com/file/example
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        className="mx-4 mt-6 font-semibold flex gap-2 items-center relative z-20"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                    >
+                        <Github
+                            className="shrink-0 border-retro bg-primary p-1"
+                            size={40}
+                        />
+                        <p className="break-all underline underline-offset-4">
+                            https://www.github.com/repo/example
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        className="mx-4 mt-6 font-semibold flex gap-2 items-center relative z-20"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.3 }}
+                    >
+                        <Globe2
+                            className="shrink-0 border-retro bg-primary p-1"
+                            size={40}
+                        />
+                        <p className="break-all">
+                            https://www.vercel.com/deployment/example
+                        </p>
+                    </motion.div>
+
+                    <motion.p
+                        className="mx-4 mt-6 font-semibold text-lg h-screen relative z-20"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.15, delay: 0.1 }}
+                    >
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Doloremque tenetur quam in, atque temporibus laborum
+                        accusantium eos qui ipsum est cupiditate...
                     </motion.p>
                 </div>
             </section>
