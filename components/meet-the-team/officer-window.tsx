@@ -47,8 +47,8 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                     />
                 </div>
             </div>
-            <div className="absolute top-[-10px] bg-accent border-retro  px-4 py-2">
-                <p className="text-white font-bold">{officer.name}</p>
+            <div className="absolute top-[-10px] bg-[#152642] border-retro  px-4 py-2">
+                <p className="text-white font-bold text-xl">{officer.name}</p>
             </div>
             <Image 
                 src={officer.imageUrl}
@@ -66,7 +66,9 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                 transition={{ duration: 0.3, delay: 0.2 }}
             >
                 <div className="bg-secondary w-full border-retro p-2 py-1 flex items-center justify-between">
-                    <p className="font-bold">PRESIDENT</p>
+                    <p className="font-bold">
+                        {officer.role}
+                    </p>
                     <X
                         className="bg-accent  border-retro"
                         size={27}
