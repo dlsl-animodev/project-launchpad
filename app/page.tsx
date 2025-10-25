@@ -6,7 +6,7 @@ import FooterCTA from "@/components/footer-cta";
 import FrequentlyAskedQuestions from "@/components/frequently-asked-questions";
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
-import MeetTheTeam from "@/components/meet-the-team";
+import MeetTheTeam from "@/components/meet-the-team/meet-the-team";
 import OrganizationsTape from "@/components/organizations-tape";
 import OurWorks from "@/components/our-works";
 import VideoSection from "@/components/video-section";
