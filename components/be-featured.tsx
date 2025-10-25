@@ -75,7 +75,7 @@ const BeFeatured = () => {
     }, [isPaused, dummyData.length]);
 
     return (
-        <div className="bg-accent border-retro-y py-16 px-4">
+        <div className="bg-accent border-retro-y py-16 px-4 ">
             <section>
                 <motion.h2
                     className="font-bold font-bebas text-8xl text-center text-primary tracking-wide"
@@ -98,18 +98,18 @@ const BeFeatured = () => {
 
             {/* Carousel wrapper */}
             <motion.div 
-                className="mt-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
+                className="max-w-4xl mx-auto"
             >
                 <div
-                    className="relative overflow-hidden"
+                    className=" pt-[5rem] relative overflow-hidden"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                 >
                     <div
-                        className="flex transition-transform duration-700"
+                        className="flex transition-transform duration-700 "
                         style={{
                             width: `${dummyData.length * 100}%`,
                             transform: `translateX(-${
@@ -121,10 +121,10 @@ const BeFeatured = () => {
                         {dummyData.map((data, index) => (
                             <div
                                 key={index}
-                                className="w-full flex-shrink-0 px-2"
+                                className="w-full flex-shrink-0 px-2 "
                                 style={{ width: `${100 / dummyData.length}%` }}
                             >
-                                <div className="bg-neutral-100 p-6 pb-12 border-retro h-full">
+                                <div className="bg-neutral-100  p-6 pb-12 border-retro h-full">
                                     <FeaturedCard
                                         name={data.name}
                                         role={data.role}
@@ -137,7 +137,6 @@ const BeFeatured = () => {
                         ))}
                     </div>
 
-                    {/* Indicators */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 bottom-3 flex gap-2">
                         {dummyData.map((_, idx) => (
                             <button
