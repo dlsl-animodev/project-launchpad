@@ -13,42 +13,43 @@ const WhatToExpect = () => {
 
     return (
         <div>
-            <section>
-                <motion.h2
-                    className="font-bold font-bebas text-8xl text-center tracking-wide"
-                    initial={{ opacity: 0, y: 20, scale: 0.7 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                >
-                    WHAT TO EXPECT?
-                </motion.h2>
-                <motion.p
-                    className="text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                >
-                    View our ongoing projects!
-                </motion.p>
-            </section>
+            <div>
+                <section className="sticky top-0">
+                    <motion.h2
+                        className="font-bold font-bebas text-8xl text-center tracking-wide"
+                        initial={{ opacity: 0, y: 20, scale: 0.7 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        WHAT TO EXPECT?
+                    </motion.h2>
+                    <motion.p
+                        className="text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                    >
+                        View our ongoing projects!
+                    </motion.p>
+                </section>
 
-            <section className="relative h-fit">
-                {/* parent is tall so children can stick and stack as you scroll */}
-                <div className="w-full max-w-4xl mx-auto h-full flex items-start justify-center">
-                    <div className="w-full relative">
-                        {projects.map((project, index) => (
-                            <FolderStack
-                                key={index}
-                                index={index}
-                                title={project.title}
-                                fillColor={project.fillColor}
-                            />
-                        ))}
+                <section className="relative h-fit">
+                    {/* parent is tall so children can stick and stack as you scroll */}
+                    <div className="w-full max-w-4xl mx-auto h-full flex items-start justify-center">
+                        <div className="w-full relative">
+                            {projects.map((project, index) => (
+                                <FolderStack
+                                    key={index}
+                                    index={index}
+                                    title={project.title}
+                                    fillColor={project.fillColor}
+                                />
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
-
-            <section className="my-[10rem]">
+                </section>
+            </div>
+            <section className="mb-[8rem] mt-[10rem]">
                 <motion.h2
                     className="font-bold font-bebas text-6xl text-center tracking-wide "
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
