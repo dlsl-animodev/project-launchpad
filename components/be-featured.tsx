@@ -85,15 +85,7 @@ const BeFeatured = () => {
                 >
                     BE FEATURED!
                 </motion.h2>
-                <motion.p
-                    className="text-center text-white"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                >
-                    Join one of our events and share your amazing ideas to have
-                    an opportunity to be featured on our platform!
-                </motion.p>
+               
             </section>
 
             {/* Carousel wrapper */}
