@@ -1,7 +1,9 @@
-'use client'
+"use client";
 
 import Button from "./ui/button";
 import React, { useEffect, useRef, useState } from "react";
+
+import { motion } from "motion/react";
 
 const BeFeatured = () => {
     const dummyData = [
@@ -46,7 +48,7 @@ const BeFeatured = () => {
     const [isPaused, setIsPaused] = useState<boolean>(false);
     const trackRef = useRef<HTMLDivElement | null>(null);
     const intervalRef = useRef<number | null>(null);
-    const SLIDE_INTERVAL = 4000; 
+    const SLIDE_INTERVAL = 4000;
 
     const goToIndex = (idx: number) => {
         setCurrentIndex(idx);
@@ -75,18 +77,32 @@ const BeFeatured = () => {
     return (
         <div className="bg-accent border-retro-y py-16 px-4">
             <section>
-                <h2 className="font-bold font-bebas text-8xl text-center text-primary tracking-wide">
+                <motion.h2
+                    className="font-bold font-bebas text-8xl text-center text-primary tracking-wide"
+                    initial={{ opacity: 0, y: 20, scale: 0.7 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                >
                     BE FEATURED!
-                </h2>
-                <p className="text-white text-center">
+                </motion.h2>
+                <motion.p
+                    className="text-center text-white"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                >
                     Join one of our events and share your amazing ideas to have
                     an opportunity to be featured on our platform!
-                </p>
+                </motion.p>
             </section>
 
-
             {/* Carousel wrapper */}
-            <div className="mt-16">
+            <motion.div 
+                className="mt-16"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+            >
                 <div
                     className="relative overflow-hidden"
                     onMouseEnter={() => setIsPaused(true)}
@@ -96,7 +112,9 @@ const BeFeatured = () => {
                         className="flex transition-transform duration-700"
                         style={{
                             width: `${dummyData.length * 100}%`,
-                            transform: `translateX(-${currentIndex * (100 / dummyData.length)}%)`,
+                            transform: `translateX(-${
+                                currentIndex * (100 / dummyData.length)
+                            }%)`,
                         }}
                         ref={trackRef}
                     >
@@ -126,19 +144,27 @@ const BeFeatured = () => {
                                 key={idx}
                                 aria-label={`Go to slide ${idx + 1}`}
                                 onClick={() => goToIndex(idx)}
-                                className={`w-3 h-3 rounded-full ${idx === currentIndex ? "bg-primary" : "bg-neutral-400"}`}
+                                className={`w-3 h-3 rounded-full ${
+                                    idx === currentIndex
+                                        ? "bg-primary"
+                                        : "bg-neutral-400"
+                                }`}
                             />
                         ))}
                     </div>
                 </div>
 
-                <div className="mt-6">
+                <motion.div 
+                    className="mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                >
                     <Button variant="secondary" className="w-full">
                         Share your entry
                     </Button>
-                </div>
-            </div>
-
+                </motion.div>
+            </motion.div>
         </div>
     );
 };
