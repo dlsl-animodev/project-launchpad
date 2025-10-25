@@ -1,60 +1,61 @@
 import React from "react";
 
-const duration = 20;
-const pauseOnHover = true;
+import { motion } from "motion/react";
 
 const OrganizationsTape = () => {
-    const orgs = ["Org1", "Org2", "Org3", "Org4", "Org5"];
+    const orgs = [
+        "Org1",
+        "Org2",
+        "Org3",
+        "Org4",
+        "Org5",
+        "Org6",
+        "Org7",
+        "Org8",
+        "Org9",
+        "Org10",
+    ];
 
     return (
-        <div className="w-full overflow-hidden bg-[#F37145] py-2 border-retro-y">
-            <style>{`
-                .marquee-wrapper { overflow: hidden; width: 100%; }
-                .marquee-track {
-                    display: flex;
-                    width: max-content;
-                    gap: 1.5rem;
-                    align-items: center;
-                    animation-name: marquee;
-                    animation-timing-function: linear;
-                    animation-iteration-count: infinite;
-                    will-change: transform;
-                }
-                .marquee-group { display: flex; gap: 1.5rem; align-items: center; }
-                .marquee-item { display: flex; align-items: center; gap: 0.5rem; box-sizing: border-box; }
-                .marquee-icon { width: 2.5rem; height: 2.5rem; flex: 0 0 auto; }
-                .marquee-item span { line-height: 1; white-space: nowrap; }
-                ${pauseOnHover ? `.marquee-wrapper:hover .marquee-track { animation-play-state: paused; }` : ''}
-                @keyframes marquee {
-                    from { transform: translateX(0); }
-                    to   { transform: translateX(-50%); }
-                }
-            `}</style>
-
-            <section className="marquee-wrapper" style={{ padding: "0.5rem 0" }}>
-                {/* Track contains two identical groups so the scroll is seamless */}
-                <div className="marquee-track" style={{ animationDuration: `${duration}s` }}>
-                    <ul className="marquee-group" aria-hidden={false}>
-                        {orgs.map((org) => (
-                            <li key={org} className="marquee-item">
-                                <div className="marquee-icon bg-neutral-100" />
-                                <span>{org}</span>
-                            </li>
-                        ))}
-                    </ul>
-
-                    {/* duplicate group must be identical markup and sizes for seamless looping */}
-                    <ul className="marquee-group" aria-hidden={true}>
-                        {orgs.map((org) => (
-                            <li key={`${org}-dup`} className="marquee-item">
-                                <div className="marquee-icon bg-neutral-100" />
-                                <span>{org}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
-        </div>
+        <motion.div 
+            className="w-full overflow-hidden bg-[#F37145] py-[2rem] border-retro-y"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+        >
+            <motion.h2
+                className="font-bold font-bebas text-6xl text-center tracking-wide"
+                initial={{ opacity: 0, y: 20, scale: 0.7 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.3 }}
+            >
+                WE ARE OPEN TO COLLABORATIONS!
+            </motion.h2>
+            <motion.p
+                className="mt-2 text-center  font-medium text-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+            >
+                Send us a message and let us bring your organization on board.
+            </motion.p>
+            <motion.div
+                className="mt-8 flex space-x-8 animate-scroll whitespace-nowrap"
+                initial={{ x: 0 }}
+                animate={{ x: "-50%" }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+                {orgs.concat(orgs).map((org, index) => (
+                    <div
+                        key={index}
+                        className="flex items-center gap-3 bg-white text-black px-6 py-3 border-retro font-semibold text-xl"
+                    >
+                        <div className="h-14 w-14 border-retro" />
+                        {org} Name
+                    </div>
+                ))}
+            </motion.div>
+        </motion.div>
     );
 };
 
