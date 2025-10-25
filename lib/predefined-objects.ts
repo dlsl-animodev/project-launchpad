@@ -87,3 +87,28 @@ export const organizationBody = {
         ],
     },
 };
+
+export const stackedTiles = [
+    {
+        id: "tile-1",
+        title: "PROJECT LAUNCHPAD",
+        fillColor: "#3A86FF",
+    },
+    {
+        id: "tile-2",
+        title: "PROJECT LAUNCHPAD",
+        fillColor: "#FF006E",
+    },
+    {
+        id: "tile-3",
+        title: "PROJECT LAUNCHPAD",
+        fillColor: "#8338EC",
+    },
+    {
+        id: "tile-4",
+        title: "PROJECT LAUNCHPADdsdsadsa",
+        fillColor: "#8338EC",
+        // last tile had a larger delay in the original layout
+        delay: 1.5,
+    },
+];
