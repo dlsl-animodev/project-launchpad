@@ -24,6 +24,14 @@ export const projects = [
         liveDemoLink: "https://project-harmony-frontend.vercel.app/",
     },
     {
+        title: "Project Deep Dive",
+        description:
+            "Project Deep Dive is more than a trip down memory lane, it’s about sharing our past projects that came to life, from architecture to deployment! First up: The Reaction Ring Game! Let’s go behind the scenes and see how it all began.",
+        githubLink: "",
+        figmaLink: "",
+        liveDemoLink: "",
+    },
+    {
         title: "Project Spotlight",
         description:
             "A collaboration with DLSL Film society, bringing innovation to the big screen in a creative crossover. Together, they are building a digital space that lets filmmakers share their works online and reach audiences on a wider horizon.",
