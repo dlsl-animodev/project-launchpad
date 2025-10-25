@@ -46,16 +46,13 @@ const OrganizationsTape = () => {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
                 {orgs.concat(orgs).map((org, index) => (
-                    <motion.div
+                    <div
                         key={index}
                         className="flex items-center gap-3 bg-white text-black px-6 py-3 border-retro font-semibold text-xl"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.2 }}
                     >
                         <div className="h-14 w-14 border-retro" />
                         {org} Name
-                    </motion.div>
+                    </div>
                 ))}
             </motion.div>
         </motion.div>
