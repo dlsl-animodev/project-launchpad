@@ -42,9 +42,9 @@ const HeroSection = () => {
             <section>
                 {/* // animate sliding in from bottom to top */}
                 {/* delay the second word slightly  */}
-                <h1 className="relative">
+                <h1 className="relative text-8xl md:text-9xl">
                     <motion.div
-                        className="text-8xl font-extrabold font-bebas "
+                        className="font-extrabold font-bebas "
                         initial={{ y: 60, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{
@@ -55,7 +55,7 @@ const HeroSection = () => {
                         DEVELOPERS
                     </motion.div>
                     <motion.div
-                        className="text-8xl font-extrabold font-bebas"
+                        className="font-extrabold font-bebas"
                         initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
@@ -68,6 +68,7 @@ const HeroSection = () => {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
+                    className="max-w-xl mx-auto text-lg md:text-xl text-center"
                 >
                     &quot;Fostering a collaborative environment where students
                     from all background can learn, create, grow together.&quot;
@@ -79,13 +80,10 @@ const HeroSection = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
+                className="w-full max-w-xs mx-auto"
             >
-                <Button>JOIN US NOW!</Button>
+                <Button className="w-full">JOIN US NOW!</Button>
             </motion.div>
-
-            {/* VIDEO  */}
-            {/* // this video will have that animation of a window popping up  */}
-          
         </div>
     );
 };
