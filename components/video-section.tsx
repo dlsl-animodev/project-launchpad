@@ -9,7 +9,7 @@ const VideoSection = () => {
     return (
         <div className="flex flex-wrap lg:flex-nowrap lg:items-center mt-[10rem] space-y-[5rem] px-[1rem]">
             <motion.h2
-                className="font-bold font-bebas text-7xl lg:text-8xl text-center lg:flex-1/2"
+                className="font-bold font-bebas text-7xl lg:text-9xl text-center lg:flex-1/2"
                 initial={{ opacity: 0, y: 20, scale: 0.7 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.1 }}
