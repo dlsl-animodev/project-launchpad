@@ -51,19 +51,19 @@ const VideoSection = () => {
                     <div className="absolute top-3 right-4 z-50 pointer-events-none">
                         <div className="flex gap-2 items-center">
                             <Minus
-                                className="bg-accent border-retro"
+                                className="bg-primary border-retro"
                                 size={27}
-                                color="white"
+                                color="black"
                             />
                             <Square
-                                className="bg-accent border-retro p-1"
+                                className="bg-primary border-retro p-1"
                                 size={27}
-                                color="white"
+                                color="black"
                             />
                             <X
-                                className="bg-accent border-retro"
+                                className="bg-primary border-retro"
                                 size={27}
-                                color="white"
+                                color="black"
                             />
                         </div>
                     </div>
