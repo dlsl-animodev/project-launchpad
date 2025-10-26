@@ -11,7 +11,7 @@ import { motion } from "motion/react";
 
 const FooterCTA = () => {
     return (
-        <SectionContainer>
+        <SectionContainer className="h-[100dvh] flex justify-center items-center">
             <SectionContainerHeader>
                 <SectionTitle
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
