@@ -3,63 +3,47 @@ import { motion } from "motion/react";
 import { StaticImageData } from "next/image";
 import React from "react";
 import ImageHandler from "../image-handler";
-import { projects } from "./projects";
+import { projects, ProjectType } from "./projects";
+import {
+    SectionContainer,
+    SectionContainerHeader,
+    SectionTitle,
+} from "../reusables/section";
 
 const MobileView = () => {
     return (
-        <div className="flex flex-col items-center ">
-            {/* Header Section */}
-            <div className="sticky top-0 bg-background z-20 w-full">
-                <motion.h2
-                    className="font-bold font-bebas text-8xl text-center "
+        <SectionContainer>
+            <SectionContainerHeader className="sticky top-0 bg-background z-20 w-full">
+                <SectionTitle
+                    className="text-8xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.2 }}
                 >
                     OUR WORKS
-                </motion.h2>
-            </div>
+                </SectionTitle>
+            </SectionContainerHeader>
 
-            {/* Project Section */}
             {projects.map((project, index) => (
-                <Project
-                    key={index}
-                    title={project.title}
-                    description={project.description}
-                    githubLink={project.githubLink}
-                    figmaLink={project.figmaLink}
-                    liveDemoLink={project.liveDemoLink}
-                />
+                <Project key={index} project={project} />
             ))}
-        </div>
+        </SectionContainer>
     );
 };
 
 export default MobileView;
 
 interface ProjectProps {
-    title: string;
-    githubLink: string;
-    figmaLink: string;
-    liveDemoLink: string;
-    description: string;
-    imageUrl?: StaticImageData;
+    project: ProjectType;
 }
 
-const Project: React.FC<ProjectProps> = ({
-    title,
-    githubLink,
-    figmaLink,
-    liveDemoLink,
-    description,
-    imageUrl,
-}) => {
+const Project: React.FC<ProjectProps> = ({ project }) => {
     return (
-        <section className="h-[180vh] relative w-full px-4">
+        <section className="h-[150vh] relative w-full ">
             {/* Sticky Preview */}
             <div className="sticky top-[6rem] z-10">
                 <motion.section
-                    className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto aspect-square "
+                    className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto"
                     initial={{ scale: 0, y: 30, opacity: 0.8 }}
                     whileInView={{ scale: 1, y: 0, opacity: 1 }}
                     transition={{
@@ -71,7 +55,7 @@ const Project: React.FC<ProjectProps> = ({
                     viewport={{ amount: 0.6 }}
                 >
                     <div className="border-retro bg-primary flex items-center justify-between px-4 py-2 w-full mb-2">
-                        <p className="font-bold">{title}</p>
+                        <p className="font-bold">{project.title}</p>
                         <div className="flex items-center gap-2">
                             <Minus
                                 className="bg-accent  border-retro"
@@ -90,19 +74,19 @@ const Project: React.FC<ProjectProps> = ({
                             />
                         </div>
                     </div>
-                    <ImageHandler />
+                    <ImageHandler className="aspect-video" />
                 </motion.section>
             </div>
 
             {/* Project Info */}
-            <div className="relative z-0">
+            <div className="relative z-0 mt-[4rem]">
                 <motion.h2
-                    className="text-5xl mt-[10rem] mx-4 relative z-20"
+                    className="text-5xl  mx-4 relative z-20"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.2 }}
                 >
-                    {title}
+                    {project.title}
                 </motion.h2>
 
                 <motion.div
@@ -116,7 +100,7 @@ const Project: React.FC<ProjectProps> = ({
                         size={40}
                     />
                     <p className="break-all underline underline-offset-4">
-                        {figmaLink || "Not available"}
+                        {project.figmaLink || "Not available"}
                     </p>
                 </motion.div>
 
@@ -131,7 +115,7 @@ const Project: React.FC<ProjectProps> = ({
                         size={40}
                     />
                     <p className="break-all underline underline-offset-4">
-                        {githubLink || "Not available"}
+                        {project.githubLink || "Not available"}
                     </p>
                 </motion.div>
 
@@ -146,7 +130,7 @@ const Project: React.FC<ProjectProps> = ({
                         size={40}
                     />
                     <p className="break-all underline underline-offset-4">
-                        {liveDemoLink || "Not available"}
+                        {project.liveDemoLink || "Not available"}
                     </p>
                 </motion.div>
 
@@ -156,7 +140,7 @@ const Project: React.FC<ProjectProps> = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.15, delay: 0.1 }}
                 >
-                    {description}.
+                    {project.description}
                 </motion.p>
             </div>
         </section>

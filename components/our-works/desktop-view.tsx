@@ -3,30 +3,33 @@ import { motion } from "motion/react";
 
 import { projects, ProjectType } from "./projects";
 import ImageHandler from "../image-handler";
+import { SectionContainer, SectionContainerHeader, SectionDescription, SectionTitle } from "../reusables/section";
 
 const DesktopView = () => {
     return (
-        <div className="flex flex-col items-center px-4">
-            <motion.h2
-                className="font-bold font-bebas text-8xl text-center"
-                initial={{ opacity: 0, y: 20, scale: 0.7 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.1 }}
-            >
-                OUR WORKS
-            </motion.h2>
-            <motion.p
-                className="text-center mb-12"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.1, delay: 0.2 }}
-            >
-                A showcase of the apps and ideas we have brought to life.
-            </motion.p>
+        <SectionContainer>
+            <SectionContainerHeader>
+                <SectionTitle
+                    className="text-8xl lg:text-9xl"
+                    initial={{ opacity: 0, y: 20, scale: 0.7 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.1 }}
+                >
+                    OUR WORKS
+                </SectionTitle>
+                <SectionDescription
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.1, delay: 0.2 }}
+                >
+                    A showcase of the apps and ideas we have brought to life.
+                </SectionDescription>
+            </SectionContainerHeader>
+            
             {projects.map((project, index) => (
                 <Project key={index} project={project} />
             ))}
-        </div>
+        </SectionContainer>
     );
 };
 

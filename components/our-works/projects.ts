@@ -26,7 +26,7 @@ export const projects = [
     {
         title: "Project Deep Dive",
         description:
-            "Project Deep Dive is more than a trip down memory lane, it’s about sharing our past projects that came to life, from architecture to deployment! First up: The Reaction Ring Game! Let’s go behind the scenes and see how it all began.",
+            "Project Deep Dive is more than a trip down memory lane, it s about sharing our past projects that came to life, from architecture to deployment! First up: The Reaction Ring Game! Let’s go behind the scenes and see how it all began.",
         githubLink: "",
         figmaLink: "",
         liveDemoLink: "",
