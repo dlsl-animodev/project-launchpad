@@ -1,12 +1,12 @@
 import { Figma, Github, Globe2, X, Minus, Square } from "lucide-react";
 import { motion } from "motion/react";
-import { StaticImageData } from "next/image";
 import React from "react";
 import ImageHandler from "../image-handler";
 import { projects, ProjectType } from "./projects";
 import {
     SectionContainer,
     SectionContainerHeader,
+    SectionContainerMain,
     SectionTitle,
 } from "../reusables/section";
 
@@ -23,10 +23,11 @@ const MobileView = () => {
                     OUR WORKS
                 </SectionTitle>
             </SectionContainerHeader>
-
-            {projects.map((project, index) => (
-                <Project key={index} project={project} />
-            ))}
+            <SectionContainerMain>
+                {projects.map((project, index) => (
+                    <Project key={index} project={project} />
+                ))}
+            </SectionContainerMain>
         </SectionContainer>
     );
 };
@@ -41,7 +42,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
     return (
         <section className="h-[150vh] relative w-full ">
             {/* Sticky Preview */}
-            <div className="sticky top-[6rem] z-10">
+            <div className="sticky top-[2rem] z-10">
                 <motion.section
                     className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto"
                     initial={{ scale: 0, y: 30, opacity: 0.8 }}
