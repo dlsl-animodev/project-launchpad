@@ -20,8 +20,8 @@ const VideoSection = () => {
             <div className="flex-1 lg:flex-1/2 flex justify-center">
                 <motion.section
                     className="relative bg-secondary aspect-square p-4 pt-12 border-retro"
-                    initial={{ scale: 0, y: 40 }}
-                    whileInView={{ scale: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{
                         type: "spring",
                         stiffness: 90,
@@ -30,13 +30,13 @@ const VideoSection = () => {
                 >
                     {/* Put scale animation only on this inner div */}
                     <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 15,
-                        }}
+                        // initial={{ scale: 0 }}
+                        // whileInView={{ scale: 1 }}
+                        // transition={{
+                        //     type: "spring",
+                        //     stiffness: 90,
+                        //     damping: 15,
+                        // }}
                         className="relative w-full h-full"
                     >
                         <video

@@ -40,7 +40,7 @@ const FrequentlyAskedQuestions = () => {
     };
 
     return (
-        <SectionContainer>
+        <SectionContainer className="mt-[10rem]">
             <SectionContainerHeader>
                 <SectionTitle
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}

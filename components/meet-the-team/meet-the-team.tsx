@@ -36,11 +36,12 @@ const MeetTheTeam = () => {
             <SectionContainerMain className="flex flex-col items-center">
                 {/* Team Committees */}
                 {Object.entries(organizationBody).map(
-                    ([, { title, members }]) => (
+                    ([, { title, members }], index) => (
                         <Committee
                             key={title}
                             name={title}
                             officers={members}
+                            index={index}
                         />
                     )
                 )}
