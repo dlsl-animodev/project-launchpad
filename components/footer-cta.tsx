@@ -29,14 +29,27 @@ const FooterCTA = () => {
                     We will follow up with your application status.
                 </SectionDescription>
             </SectionContainerHeader>
-            <SectionContainerMain>
+            <SectionContainerMain className="flex flex-col w-full max-w-md items-center gap-2">
                 <motion.div
-                    className="w-full max-w-md"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.3 }}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="w-full"
                 >
-                    <Button className="w-full mt-12">JOIN US!</Button>
+                    <Button className="w-full"> COLLABORATE WITH US!</Button>
+                </motion.div>
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    className="w-full"
+                >
+                    <Button
+                        className="w-full bg-accent border-black"
+                        variant="accent"
+                    >
+                        JOIN US NOW!
+                    </Button>
                 </motion.div>
             </SectionContainerMain>
         </SectionContainer>
