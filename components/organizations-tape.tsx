@@ -1,6 +1,6 @@
 import React from "react";
-
 import { motion } from "motion/react";
+
 import {
     SectionContainer,
     SectionContainerHeader,
@@ -23,6 +23,8 @@ const OrganizationsTape = () => {
         "Org10",
     ];
 
+    const repeatedOrgs = [...orgs, ...orgs, ...orgs];
+
     return (
         <SectionContainer
             className="w-full overflow-hidden bg-[#F37145] py-[4rem] border-retro-y"
@@ -40,7 +42,7 @@ const OrganizationsTape = () => {
                     WE ARE OPEN TO COLLABORATIONS!
                 </SectionTitle>
                 <SectionDescription
-                    className="mt-2 text-center  font-medium text-lg"
+                    className="mt-2 text-center font-medium text-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.2 }}
@@ -49,28 +51,29 @@ const OrganizationsTape = () => {
                     board.
                 </SectionDescription>
             </SectionContainerHeader>
+
             <SectionContainerMain>
-                {/* THE ACTUAL TAPE SECTION  */}
-                <motion.div
-                    className="flex space-x-8 whitespace-nowrap"
-                    initial={{ x: 0 }}
-                    animate={{ x: "-50%" }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear",
-                    }}
-                >
-                    {orgs.map((org, index) => (
-                        <div
-                            key={index}
-                            className="flex items-center gap-3 bg-white text-black px-6 py-3 border-retro font-semibold text-xl"
-                        >
-                            <div className="h-14 w-14 border-retro" />
-                            {org} Name
-                        </div>
-                    ))}
-                </motion.div>
+                <div className="relative w-full overflow-hidden">
+                    <motion.div
+                        className="flex space-x-8 whitespace-nowrap"
+                        animate={{ x: ["0%", "-50%"] }}
+                        transition={{
+                            ease: "linear",
+                            duration: 50,
+                            repeat: Infinity,
+                        }}
+                    >
+                        {repeatedOrgs.map((org, index) => (
+                            <div
+                                key={index}
+                                className="flex items-center gap-3 bg-white text-black px-6 py-3 border-retro font-semibold text-xl"
+                            >
+                                <div className="h-14 w-14 border-retro" />
+                                {org} Name
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
             </SectionContainerMain>
         </SectionContainer>
     );
