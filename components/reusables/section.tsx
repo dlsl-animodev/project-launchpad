@@ -67,7 +67,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
 }) => {
     return (
         <motion.h2
-            className={twMerge(`font-bold font-bebas text-center tracking-wide text-8xl`, className)}
+            className={twMerge(`font-bold font-bebas text-center tracking-wide text-7xl md:text-8xl`, className)}
             {...props}
         >
             {children}
