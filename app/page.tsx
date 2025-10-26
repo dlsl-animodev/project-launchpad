@@ -1,6 +1,6 @@
 'use client'
 
-import BeFeatured from "@/components/be-featured";
+import BeFeatured from "@/components/be-featured/be-featured";
 import Footer from "@/components/footer";
 import FooterCTA from "@/components/footer-cta";
 import FrequentlyAskedQuestions from "@/components/frequently-asked-questions";
