@@ -52,7 +52,7 @@ const BeFeatured = () => {
 
     return (
         <SectionContainer className="bg-accent border-retro-y py-16 px-4 block">
-            <SectionContainerHeader className="sticky top-0">
+            <SectionContainerHeader className="sticky top-0 pb-[6rem]">
                 <SectionTitle
                     className="text-7xl lg:text-9xl text-primary"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
