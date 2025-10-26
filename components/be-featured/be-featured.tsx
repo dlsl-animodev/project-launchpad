@@ -5,6 +5,7 @@ import React from "react";
 import {
     SectionContainer,
     SectionContainerHeader,
+    SectionContainerMain,
     SectionDescription,
     SectionTitle,
 } from "../reusables/section";
@@ -51,7 +52,7 @@ const BeFeatured = () => {
 
     return (
         <SectionContainer className="bg-accent border-retro-y py-16 px-4 block">
-            <SectionContainerHeader className="sticky top-0">
+            <SectionContainerHeader className="sticky top-0 pb-[6rem]">
                 <SectionTitle
                     className="text-7xl lg:text-9xl text-primary"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
@@ -65,8 +66,7 @@ const BeFeatured = () => {
                 </SectionDescription>
             </SectionContainerHeader>
 
-            <section className="relative h-fit">
-                {/* parent is tall so children can stick and stack as you scroll */}
+            <SectionContainerMain className="relative h-fit">
                 <div className="w-full max-w-4xl mx-auto h-full flex items-start justify-center">
                     <div className="w-full relative">
                         {dummyData.map((data, index) => (
@@ -82,7 +82,7 @@ const BeFeatured = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </SectionContainerMain>
         </SectionContainer>
     );
 };

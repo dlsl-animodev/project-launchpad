@@ -19,9 +19,9 @@ const FolderStack: React.FC<FolderStackProps> = ({ index, title, fillColor }) =>
                 className="my-16 aspect-video w-full flex items-center justify-center text-foreground"
                 fillColor={fillColor}
             >
-                <h3 className="text-3xl font-bold">
+                <p className="text-3xl font-bold">
                     {title}
-                </h3>
+                </p>
             </NotchedBox>
         </motion.div>
     );

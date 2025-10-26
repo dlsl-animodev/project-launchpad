@@ -1,6 +1,13 @@
+import {
+    SectionContainer,
+    SectionContainerFooter,
+    SectionContainerHeader,
+    SectionContainerMain,
+    SectionContainerSubHeading,
+    SectionDescription,
+    SectionTitle,
+} from "../reusables/section";
 import FolderStack from "./folder-stack";
-
-import { motion } from "motion/react";
 
 const WhatToExpect = () => {
     const projects = [
@@ -12,29 +19,27 @@ const WhatToExpect = () => {
     ];
 
     return (
-        <div>
-            <div>
-                <section className="sticky top-0">
-                    <motion.h2
-                        className="font-bold font-bebas text-8xl text-center tracking-wide"
+        <SectionContainer withDefaultClasses={false}>
+          <div>
+                <SectionContainerHeader className="sticky top-0 pb-[6rem]">
+                    <SectionTitle
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.3 }}
                     >
                         WHAT TO EXPECT?
-                    </motion.h2>
-                    <motion.p
+                    </SectionTitle>
+                    <SectionDescription
                         className="text-center"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 }}
                     >
                         View our ongoing projects!
-                    </motion.p>
-                </section>
+                    </SectionDescription>
+                </SectionContainerHeader>
 
-                <section className="relative h-fit">
-                    {/* parent is tall so children can stick and stack as you scroll */}
+                <SectionContainerMain className="relative h-fit">
                     <div className="w-full max-w-4xl mx-auto h-full flex items-start justify-center">
                         <div className="w-full relative">
                             {projects.map((project, index) => (
@@ -47,29 +52,28 @@ const WhatToExpect = () => {
                             ))}
                         </div>
                     </div>
-                </section>
+                </SectionContainerMain>
             </div>
-            <section className="mb-[8rem] mt-[10rem]">
-                <motion.h2
-                    className="font-bold font-bebas text-6xl lg:text-9xl text-center tracking-wide "
+            <SectionContainerFooter className="mb-[8rem] mt-[10rem]">
+                <SectionContainerSubHeading
+                    className="text-6xl lg:text-9xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
                     WE SHARE THE BUILD PROCESS, ARCHITECTURE PLANS, AND
                     PROGRESS.
-                </motion.h2>
-                <motion.p
-                    className="text-center text-base lg:text-3xl"
+                </SectionContainerSubHeading>
+                <SectionDescription
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.2 }}
                 >
                     This is a collaborative space, where your thoughts and ideas
                     are welcome as we code a real-world solution!
-                </motion.p>
-            </section>
-        </div>
+                </SectionDescription>
+            </SectionContainerFooter>
+        </SectionContainer>
     );
 };
 

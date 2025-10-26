@@ -3,7 +3,13 @@ import { motion } from "motion/react";
 
 import { projects, ProjectType } from "./projects";
 import ImageHandler from "../image-handler";
-import { SectionContainer, SectionContainerHeader, SectionDescription, SectionTitle } from "../reusables/section";
+import {
+    SectionContainer,
+    SectionContainerHeader,
+    SectionContainerMain,
+    SectionDescription,
+    SectionTitle,
+} from "../reusables/section";
 
 const DesktopView = () => {
     return (
@@ -25,10 +31,11 @@ const DesktopView = () => {
                     A showcase of the apps and ideas we have brought to life.
                 </SectionDescription>
             </SectionContainerHeader>
-            
-            {projects.map((project, index) => (
-                <Project key={index} project={project} />
-            ))}
+            <SectionContainerMain>
+                {projects.map((project, index) => (
+                    <Project key={index} project={project} />
+                ))}
+            </SectionContainerMain>
         </SectionContainer>
     );
 };

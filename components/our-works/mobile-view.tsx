@@ -1,18 +1,18 @@
 import { Figma, Github, Globe2, X, Minus, Square } from "lucide-react";
 import { motion } from "motion/react";
-import { StaticImageData } from "next/image";
 import React from "react";
 import ImageHandler from "../image-handler";
 import { projects, ProjectType } from "./projects";
 import {
     SectionContainer,
     SectionContainerHeader,
+    SectionContainerMain,
     SectionTitle,
 } from "../reusables/section";
 
 const MobileView = () => {
     return (
-        <SectionContainer>
+        <SectionContainer className="px-0">
             <SectionContainerHeader className="sticky top-0 bg-background z-20 w-full">
                 <SectionTitle
                     className="text-8xl"
@@ -23,10 +23,11 @@ const MobileView = () => {
                     OUR WORKS
                 </SectionTitle>
             </SectionContainerHeader>
-
-            {projects.map((project, index) => (
-                <Project key={index} project={project} />
-            ))}
+            <SectionContainerMain className="px-4">
+                {projects.map((project, index) => (
+                    <Project key={index} project={project} />
+                ))}
+            </SectionContainerMain>
         </SectionContainer>
     );
 };

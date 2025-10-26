@@ -2,6 +2,12 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import {
+    SectionContainer,
+    SectionContainerHeader,
+    SectionContainerMain,
+    SectionTitle,
+} from "./reusables/section";
 
 const FrequentlyAskedQuestions = () => {
     const dummyQuestions = [
@@ -34,63 +40,66 @@ const FrequentlyAskedQuestions = () => {
     };
 
     return (
-        <div>
-            <section>
-                <motion.h2
-                    className="font-bold font-bebas text-7xl text-center tracking-wide"
+        <SectionContainer>
+            <SectionContainerHeader>
+                <SectionTitle
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
                     FREQUENTLY ASKED QUESTIONS
-                </motion.h2>
-            </section>
+                </SectionTitle>
+            </SectionContainerHeader>
 
-            <ul className="my-16">
-                {dummyQuestions.map((item, index) => (
-                    <motion.li
-                        key={index}
-                        className="border-retro py-6 px-4 cursor-pointer"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.2, delay: index * 0.1 }}
-                        onClick={() => toggle(index)}
-                    >
-                        <div className="flex justify-between items-center">
-                            <p className="font-bold text-lg">{item.question}</p>
-                            <motion.span
-                                animate={{
-                                    rotate: openIndex === index ? 45 : 0,
-                                }}
-                                transition={{ duration: 0.2 }}
-                                className="text-xl select-none"
-                            >
-                                +
-                            </motion.span>
-                        </div>
-
-                        <AnimatePresence>
-                            {openIndex === index && (
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: "auto", opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    transition={{
-                                        duration: 0.3,
-                                        ease: "easeInOut",
+            <SectionContainerMain className="w-full">
+                <ul>
+                    {dummyQuestions.map((item, index) => (
+                        <motion.li
+                            key={index}
+                            className="border-retro py-6 px-4 cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.2, delay: index * 0.1 }}
+                            onClick={() => toggle(index)}
+                        >
+                            <div className="flex justify-between items-center">
+                                <p className="font-bold text-lg">
+                                    {item.question}
+                                </p>
+                                <motion.span
+                                    animate={{
+                                        rotate: openIndex === index ? 45 : 0,
                                     }}
-                                    className="overflow-hidden"
+                                    transition={{ duration: 0.2 }}
+                                    className="text-xl select-none"
                                 >
-                                    <p className="mt-3 text-neutral-700">
-                                        {item.answer}
-                                    </p>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </motion.li>
-                ))}
-            </ul>
-        </div>
+                                    +
+                                </motion.span>
+                            </div>
+
+                            <AnimatePresence>
+                                {openIndex === index && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{
+                                            duration: 0.3,
+                                            ease: "easeInOut",
+                                        }}
+                                        className="overflow-hidden"
+                                    >
+                                        <p className="mt-3 text-neutral-700">
+                                            {item.answer}
+                                        </p>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </motion.li>
+                    ))}
+                </ul>
+            </SectionContainerMain>
+        </SectionContainer>
     );
 };
 

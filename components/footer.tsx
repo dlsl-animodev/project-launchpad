@@ -1,10 +1,10 @@
 import ANIMODEVLOGO from "@/public/animo-dev-logo.jpg";
-import Image from 'next/image';
+import ImageHandler from "./image-handler";
 
 const Footer = () => {
     return (
-        <div className="flex items-center justify-between bg-secondary border-retro-y py-8 px-4">
-            <Image
+        <div className="flex items-center justify-between bg-secondary border-retro-y py-8 px-4 gap-[10rem] md:gap-[0rem]">
+            <ImageHandler
                 src={ANIMODEVLOGO}
                 alt="Animo Dev Logo"
                 width={70}
