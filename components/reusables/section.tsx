@@ -2,20 +2,25 @@ import { twMerge } from "tailwind-merge";
 import { HTMLMotionProps, motion } from "motion/react";
 
 // ACTUAL SECTION
-interface SectionProps {
+interface SectionProps extends HTMLMotionProps<"section"> {
     children: React.ReactNode;
     className?: string;
 }
-const SectionContainer: React.FC<SectionProps> = ({ children, className }) => {
+const SectionContainer: React.FC<SectionProps> = ({
+    children,
+    className,
+    ...props
+}) => {
     return (
-        <section
+        <motion.section
             className={twMerge(
                 `flex flex-col items-center gap-12 px-4`,
                 className
             )}
+            {...props}
         >
             {children}
-        </section>
+        </motion.section>
     );
 };
 
@@ -27,7 +32,17 @@ const SectionContainerHeader: React.FC<SectionProps> = ({
     return <div className={className}>{children}</div>;
 };
 
-const SectionContainerFooter : React.FC<SectionProps> = ({
+// SECTION MAIN
+const SectionContainerMain : React.FC<SectionProps> = ({
+    children,
+    className,
+}) => {
+    return <div className={className}>{children}</div>;
+};
+
+
+// SECTION FOOTER
+const SectionContainerFooter: React.FC<SectionProps> = ({
     children,
     className,
 }) => {
@@ -68,7 +83,7 @@ const SectionDescription: React.FC<SectionDescriptionProps> = ({
     return (
         <motion.p
             {...props}
-            className={twMerge("text-center text-lg lg:text-3xl", className)}
+            className={twMerge("text-center text-lg md:text-2xl lg:text-3xl", className)}
         >
             {children}
         </motion.p>
@@ -78,6 +93,7 @@ const SectionDescription: React.FC<SectionDescriptionProps> = ({
 export {
     SectionContainer,
     SectionContainerHeader,
+    SectionContainerMain,
     SectionContainerFooter,
     SectionTitle,
     SectionDescription,
