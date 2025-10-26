@@ -12,7 +12,7 @@ import {
 
 const MobileView = () => {
     return (
-        <SectionContainer>
+        <SectionContainer className="px-0">
             <SectionContainerHeader className="sticky top-0 bg-background z-20 w-full">
                 <SectionTitle
                     className="text-8xl"
@@ -23,7 +23,7 @@ const MobileView = () => {
                     OUR WORKS
                 </SectionTitle>
             </SectionContainerHeader>
-            <SectionContainerMain>
+            <SectionContainerMain className="px-4">
                 {projects.map((project, index) => (
                     <Project key={index} project={project} />
                 ))}
@@ -42,7 +42,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
     return (
         <section className="h-[150vh] relative w-full ">
             {/* Sticky Preview */}
-            <div className="sticky top-[2rem] z-10">
+            <div className="sticky top-[6rem] z-10">
                 <motion.section
                     className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto"
                     initial={{ scale: 0, y: 30, opacity: 0.8 }}
