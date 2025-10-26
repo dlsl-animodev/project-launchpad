@@ -20,7 +20,7 @@ const LandingPage = () => {
             <OrganizationsTape />
             <VideoSection />
 
-            <div className="mt-[12rem] flex flex-col gap-24">
+            <div className="mt-[10rem] lg:mt-[12rem] flex flex-col gap-24">
                 <OurWorks />
                 <MeetTheTeam />
                 <WhatToExpect />
