@@ -21,7 +21,7 @@ const WhatToExpect = () => {
     return (
         <SectionContainer withDefaultClasses={false}>
           <div>
-                <SectionContainerHeader className="sticky top-0 pb-[2rem]">
+                <SectionContainerHeader className="sticky top-0 pb-[6rem]">
                     <SectionTitle
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
