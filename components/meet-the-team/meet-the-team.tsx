@@ -3,19 +3,25 @@
 import { motion } from "motion/react";
 import Committee from "./committee";
 import { organizationBody } from "@/lib/predefined-objects";
+import {
+    SectionContainer,
+    SectionContainerHeader,
+    SectionContainerMain,
+    SectionTitle,
+} from "../reusables/section";
 
 const MeetTheTeam = () => {
     return (
-        <div className="bg-accent border-retro-y py-16 px-4">
-            <section>
-                <motion.h2
-                    className="font-bold font-bebas text-8xl text-center text-primary tracking-wide"
+        <SectionContainer className="bg-accent border-retro-y py-16">
+            <SectionContainerHeader>
+                <SectionTitle
+                    className="text-8xl text-primary"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
                     MEET THE TEAM
-                </motion.h2>
+                </SectionTitle>
                 <motion.p
                     className="text-white text-center"
                     initial={{ opacity: 0, y: 20 }}
@@ -26,10 +32,11 @@ const MeetTheTeam = () => {
                     fostering a collaborative environment where students from
                     all backgrounds can thrive and innovate together.
                 </motion.p>
-            </section>
-            <section className="flex flex-col items-center mt-16">
+            </SectionContainerHeader>
+            <SectionContainerMain className="flex flex-col items-center mt-16">
+                {/* Team Committees */}
                 {Object.entries(organizationBody).map(
-                    ([, { title, members, }]) => (
+                    ([, { title, members }]) => (
                         <Committee
                             key={title}
                             name={title}
@@ -37,8 +44,8 @@ const MeetTheTeam = () => {
                         />
                     )
                 )}
-            </section>
-        </div>
+            </SectionContainerMain>
+        </SectionContainer>
     );
 };
 
