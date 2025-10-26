@@ -1,14 +1,16 @@
-
+import {
+    SectionContainer,
+    SectionContainerFooter,
+    SectionContainerHeader,
+} from "./reusables/section";
 import Button from "./ui/button";
 import { motion } from "motion/react";
 
 const HeroSection = () => {
     return (
-        <div className="bg-foreground text-background h-[100dvh] flex flex-col items-center justify-center gap-6 text-center px-4">
-            <section>
-                {/* // animate sliding in from bottom to top */}
-                {/* delay the second word slightly  */}
-                <h1 className="relative text-8xl md:text-9xl">
+        <SectionContainer className="h-[100dvh] justify-center text-center">
+            <SectionContainerHeader>
+                <h1 className="relative text-8xl sm:text-[7rem]  md:text-[8rem] lg:text-[10rem]">
                     <motion.div
                         className="font-extrabold font-bebas "
                         initial={{ y: 60, opacity: 0 }}
@@ -39,18 +41,33 @@ const HeroSection = () => {
                     &quot;Fostering a collaborative environment where students
                     from all background can learn, create, grow together.&quot;
                 </motion.p>
-            </section>
+            </SectionContainerHeader>
 
             {/* CTA  */}
-            <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="w-full max-w-xs mx-auto"
-            >
-                <Button className="w-full">JOIN US NOW!</Button>
-            </motion.div>
-        </div>
+            <SectionContainerFooter className="flex flex-col w-full max-w-md items-center gap-2">
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="w-full"
+                >
+                    <Button className="w-full"> COLLABORATE WITH US!</Button>
+                </motion.div>
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    className="w-full"
+                >
+                    <Button
+                        className="w-full bg-accent border-black"
+                        variant="accent"
+                    >
+                        JOIN US NOW!
+                    </Button>
+                </motion.div>
+            </SectionContainerFooter>
+        </SectionContainer>
     );
 };
 
