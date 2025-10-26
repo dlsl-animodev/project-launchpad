@@ -13,7 +13,7 @@ const FolderStack: React.FC<FolderStackProps> = ({ index, title, fillColor }) =>
             initial={{ opacity: 0, y: 40 + index * 20, scale: 0.98 }}
             whileInView={{ opacity: 1, y: index * 8, scale: 1 }}
             transition={{ duration: 0.35 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true }}
         >
             <NotchedBox
                 className="my-16 aspect-video w-full flex items-center justify-center text-foreground"
