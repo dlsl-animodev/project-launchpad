@@ -25,7 +25,7 @@ const OrganizationsTape = () => {
 
     return (
         <SectionContainer
-            className="w-full overflow-hidden bg-[#F37145] py-[2rem] border-retro-y"
+            className="w-full overflow-hidden bg-[#F37145] py-[4rem] border-retro-y"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}

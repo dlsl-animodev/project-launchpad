@@ -33,7 +33,7 @@ const MeetTheTeam = () => {
                     all backgrounds can thrive and innovate together.
                 </motion.p>
             </SectionContainerHeader>
-            <SectionContainerMain className="flex flex-col items-center mt-16">
+            <SectionContainerMain className="flex flex-col items-center">
                 {/* Team Committees */}
                 {Object.entries(organizationBody).map(
                     ([, { title, members }]) => (
