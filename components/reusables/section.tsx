@@ -10,7 +10,7 @@ const SectionContainer: React.FC<SectionProps> = ({ children, className }) => {
     return (
         <section
             className={twMerge(
-                `flex flex-col items-center space-y-12 px-4`,
+                `flex flex-col items-center gap-12 px-4`,
                 className
             )}
         >
@@ -21,6 +21,13 @@ const SectionContainer: React.FC<SectionProps> = ({ children, className }) => {
 
 // SECTION HEADER
 const SectionContainerHeader: React.FC<SectionProps> = ({
+    children,
+    className,
+}) => {
+    return <div className={className}>{children}</div>;
+};
+
+const SectionContainerFooter : React.FC<SectionProps> = ({
     children,
     className,
 }) => {
@@ -71,6 +78,7 @@ const SectionDescription: React.FC<SectionDescriptionProps> = ({
 export {
     SectionContainer,
     SectionContainerHeader,
+    SectionContainerFooter,
     SectionTitle,
     SectionDescription,
 };
