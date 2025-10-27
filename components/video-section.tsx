@@ -28,25 +28,18 @@ const VideoSection = () => {
                         damping: 15,
                     }}
                 >
-                    {/* Put scale animation only on this inner div */}
-                    <motion.div
-                        // initial={{ scale: 0 }}
-                        // whileInView={{ scale: 1 }}
-                        // transition={{
-                        //     type: "spring",
-                        //     stiffness: 90,
-                        //     damping: 15,
-                        // }}
-                        className="relative w-full h-full"
-                    >
+                    <div className="relative w-full h-full">
                         <video
                             src="/sample-video.mp4"
                             className="w-full h-full object-cover border-retro"
                             autoPlay
                             loop
                             muted
+                            playsInline
+                            webkit-playsinline="true"
+                            controls={false}
                         />
-                    </motion.div>
+                    </div>
 
                     <div className="absolute top-3 right-4 z-50 pointer-events-none">
                         <div className="flex gap-2 items-center">
