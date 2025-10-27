@@ -65,8 +65,6 @@ const altone = localFont({
     display: "swap",
 });
 
-// removed Poppins and Boldonse per request
-
 const pacifico = Pacifico({
     variable: "--font-pacifico",
     subsets: ["latin"],
@@ -89,9 +87,31 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://project-launchpad.vercel.app/"), // set to prod url
     title: "ANIMO.DEV",
     description:
         "The official ANIMO.DEV website together with the community! Containing what our organization is all about, who we are, our projects, and updates with our event schedule to see what is coming next, and so much more! The website will be open and accessible to everyone.",
+    openGraph: {
+        title: "ANIMO.DEV",
+        description:
+            "The official ANIMO.DEV website together with the community! Containing what our organization is all about, who we are, our projects, and updates with our event schedule to see what is coming next, and so much more! The website will be open and accessible to everyone.",
+        siteName: "ANIMO.DEV",
+        images: [
+            {
+                url: "/animo-dev-logo.jpg",
+                width: 1200,
+                height: 630,
+                alt: "ANIMO.DEV Open Graph Image",
+            },
+        ],
+        locale: "en-US",
+        type: "website",
+    },
+    icons: {
+        icon: "/animo-dev-logo.jpg",
+        shortcut: "/animo-dev-logo.jpg",
+        apple: "/animo-dev-logo.jpg",
+    },
 };
 
 export default function RootLayout({
@@ -101,9 +121,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-           <body
-    className={`${pacifico.variable} ${gtProelium.variable} ${altone.variable} ${inter.variable} ${rubik.variable} ${righteous.variable}`}
->
+            <body
+                className={`${pacifico.variable} ${gtProelium.variable} ${altone.variable} ${inter.variable} ${rubik.variable} ${righteous.variable}`}
+            >
                 <SmoothScroll>{children}</SmoothScroll>
             </body>
         </html>
