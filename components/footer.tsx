@@ -22,7 +22,7 @@ const Footer = () => {
                         height={70}
                         className="border-retro border-black"
                     />
-                    <p className="text-5xl text-center lg:text-7xl font-bold font-rubik">
+                    <p className="text-3xl md:text-5xl text-center lg:text-7xl font-bold font-rubik">
                         ANIMO.DEV
                     </p>
                 </div>
