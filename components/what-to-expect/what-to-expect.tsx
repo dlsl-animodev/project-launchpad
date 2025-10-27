@@ -25,7 +25,7 @@ const WhatToExpect = () => {
             id={SECTION_IDS.FUTURE_PROJECTS}
         >
             <div>
-                <SectionContainerHeader className="sticky top-[3rem] pb-[6rem] mt-[6rem]">
+                <SectionContainerHeader className="sticky top-[5rem] pb-[6rem] mt-[6rem]">
                     <SectionTitle
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}

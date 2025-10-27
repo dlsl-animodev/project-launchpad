@@ -20,7 +20,7 @@ const PostStack: React.FC<PostStackProps> = ({
 }) => {
     return (
         <motion.div
-            className={`sticky top-[13rem] lg:top-[15rem] z-0 bg-neutral-200  border-retro p-6 my-16 w-full   ${index % 2 === 0 ? 'translate-x-2 rotate-2' : '-translate-x-2  -rotate-2'}`}
+            className={`sticky top-[18rem] z-0 bg-neutral-200  border-retro p-6 my-16 w-full   ${index % 2 === 0 ? 'translate-x-2 rotate-2' : '-translate-x-2  -rotate-2'}`}
             initial={{ opacity: 0, y: 40 + index * 20, scale: 0.98 }}
             whileInView={{ opacity: 1, y: index * 8, scale: 1 }}
             transition={{ duration: 0.35 }}
