@@ -67,7 +67,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
 }) => {
     return (
         <motion.h2
-            className={twMerge(`font-bold font-bebas text-center tracking-wide text-7xl md:text-8xl`, className)}
+            className={twMerge(`font-bold font-gtproelium text-center tracking-wide text-7xl md:text-8xl`, className)}
             {...props}
         >
             {children}
@@ -82,7 +82,7 @@ const SectionContainerSubHeading: React.FC<SectionTitleProps> = ({
 }) => {
     return (
         <motion.h3
-            className={twMerge(`font-bold font-bebas text-center text-7xl`, className)}
+            className={twMerge(`font-gtproelium text-center text-7xl tracking-wide`, className)}
             {...props}
         >
             {children}
@@ -104,7 +104,7 @@ const SectionDescription: React.FC<SectionDescriptionProps> = ({
         <motion.p
             {...props}
             className={twMerge(
-                "text-center text-lg md:text-2xl lg:text-3xl",
+                "text-center text-lg md:text-2xl lg:text-3xl font-medium",
                 className
             )}
         >

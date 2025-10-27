@@ -1,7 +1,35 @@
 import SmoothScroll from "@/components/smooth-scroll";
 import type { Metadata } from "next";
-import { Pacifico, Bebas_Neue, Inter, Rubik } from "next/font/google";
+import { Pacifico, Inter, Rubik } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const gtProelium = localFont({
+    src: [
+        {
+            path: "../public/fonts/gt_proelium/GTProelium.otf",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../public/fonts/gt_proelium/GTProeliumItalic.otf",
+            weight: "400",
+            style: "italic",
+        },
+        {
+            path: "../public/fonts/gt_proelium/GTProeliumSharp.otf",
+            weight: "700",
+            style: "normal",
+        },
+        {
+            path: "../public/fonts/gt_proelium/GTProeliumSharpItalic.otf",
+            weight: "700",
+            style: "italic",
+        },
+    ],
+    variable: "--font-gtproelium",
+    display: "swap",
+});
 
 // removed Poppins and Boldonse per request
 
@@ -12,12 +40,6 @@ const pacifico = Pacifico({
     display: "swap",
 });
 
-const bebas = Bebas_Neue({
-    variable: "--font-bebas",
-    subsets: ["latin"],
-    weight: "400",
-    display: "swap",
-});
 
 const inter = Inter({
     variable: "--font-inter",
@@ -47,7 +69,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${pacifico.variable} ${bebas.variable} ${inter.variable} ${rubik.variable}`}
+                className={`${pacifico.variable} ${gtProelium.variable} ${inter.variable} ${rubik.variable}`}
             >
                 <SmoothScroll>{children}</SmoothScroll>
             </body>
