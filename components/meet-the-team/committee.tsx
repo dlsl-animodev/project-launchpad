@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
 import OfficerWindow, { OfficerType } from "./officer-window";
+import { SectionContainerSubHeading } from "../reusables/section";
 
 interface CommitteeProps {
     name: string;
@@ -9,14 +9,14 @@ interface CommitteeProps {
 const Committee: React.FC<CommitteeProps> = ({ name, officers, index }) => {
     return (
         <>
-            <motion.h3
-                className={`font-bold text-secondary text-6xl text-center my-[4rem] ${index > 0 ? "mt-[8rem] pt-[8rem] border-t-2 border-primary w-full" : ""}`}
+            <SectionContainerSubHeading
+                className={`font-inter font-bold text-secondary text-center my-[4rem] ${index > 0 ? "mt-[8rem] pt-[8rem] border-t-2 border-primary w-full" : ""}`}
                 initial={{ opacity: 0, y: 20, scale: 0.7 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.3 }}
             >
-                {name}
-            </motion.h3>
+                {name.toUpperCase()}
+            </SectionContainerSubHeading>
 
             <ul
                 className={`flex flex-wrap justify-center gap-12 space-y-6 w-full max-w-[90vw] mx-auto`}

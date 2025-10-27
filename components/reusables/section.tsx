@@ -82,7 +82,7 @@ const SectionContainerSubHeading: React.FC<SectionTitleProps> = ({
 }) => {
     return (
         <motion.h3
-            className={twMerge(`font-gtproelium text-center text-7xl tracking-wide`, className)}
+            className={twMerge(`font-gtproelium text-center text-4xl sm:text-6xl md:text-7xl tracking-wide`, className)}
             {...props}
         >
             {children}
