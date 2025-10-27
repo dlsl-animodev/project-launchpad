@@ -1,3 +1,4 @@
+import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 import {
     SectionContainer,
     SectionContainerFooter,
@@ -19,9 +20,9 @@ const WhatToExpect = () => {
     ];
 
     return (
-        <SectionContainer withDefaultClasses={false}>
+        <SectionContainer withDefaultClasses={false} id={SECTION_IDS.FUTURE_PROJECTS}>
           <div>
-                <SectionContainerHeader className="sticky top-0 pb-[6rem]">
+                <SectionContainerHeader className="sticky top-[3rem] pb-[6rem]">
                     <SectionTitle
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -35,7 +36,7 @@ const WhatToExpect = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 }}
                     >
-                        View our ongoing projects!
+                        View our future events and projects!
                     </SectionDescription>
                 </SectionContainerHeader>
 
@@ -54,7 +55,7 @@ const WhatToExpect = () => {
                     </div>
                 </SectionContainerMain>
             </div>
-            <SectionContainerFooter className="mb-[8rem] mt-[10rem]">
+            <SectionContainerFooter className="mb-[14rem] mt-[20rem]">
                 <SectionContainerSubHeading
                     className="text-6xl lg:text-9xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}

@@ -7,13 +7,15 @@ import {
     SectionContainer,
     SectionContainerHeader,
     SectionContainerMain,
+    SectionDescription,
     SectionTitle,
 } from "../reusables/section";
+import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 
 const MobileView = () => {
     return (
-        <SectionContainer className="px-0">
-            <SectionContainerHeader className="sticky top-0 bg-background z-20 w-full">
+        <SectionContainer className="px-0" id={SECTION_IDS.OUR_WORKS}>
+            <SectionContainerHeader>
                 <SectionTitle
                     className="text-8xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
@@ -22,6 +24,9 @@ const MobileView = () => {
                 >
                     OUR WORKS
                 </SectionTitle>
+                <SectionDescription className='px-2'>
+                    A showcase of the apps and ideas we have brought to life.
+                </SectionDescription>
             </SectionContainerHeader>
             <SectionContainerMain className="px-4">
                 {projects.map((project, index) => (
@@ -42,7 +47,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
     return (
         <section className="h-[150vh] relative w-full ">
             {/* Sticky Preview */}
-            <div className="sticky top-[6rem] z-10">
+            <div className="sticky top-[3rem] z-10">
                 <motion.section
                     className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto"
                     initial={{ scale: 0, y: 30, opacity: 0.8 }}
@@ -80,7 +85,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
             </div>
 
             {/* Project Info */}
-            <div className="relative z-0 mt-[4rem]">
+            <div className="relative z-0 mt-[8rem]">
                 <motion.h2
                     className="text-5xl  mx-4 relative z-20"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}

@@ -4,7 +4,6 @@ import { Minus } from "lucide-react";
 import { Square } from "lucide-react";
 import { X } from "lucide-react";
 
-// scrolling animation on scale and y axis
 const VideoSection = () => {
     return (
         <div className="flex flex-wrap lg:flex-nowrap lg:items-center mt-[10rem] space-y-[5rem] px-[1rem]">
@@ -20,33 +19,26 @@ const VideoSection = () => {
             <div className="flex-1 lg:flex-1/2 flex justify-center">
                 <motion.section
                     className="relative bg-secondary aspect-square p-4 pt-12 border-retro"
-                    initial={{ scale: 0, y: 40 }}
-                    whileInView={{ scale: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{
                         type: "spring",
                         stiffness: 90,
                         damping: 15,
                     }}
                 >
-                    {/* Put scale animation only on this inner div */}
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 15,
-                        }}
-                        className="relative w-full h-full"
-                    >
+                    <div className="relative w-full h-full">
                         <video
                             src="/sample-video.mp4"
                             className="w-full h-full object-cover border-retro"
                             autoPlay
                             loop
                             muted
+                            playsInline
+                            webkit-playsinline="true"
+                            controls={false}
                         />
-                    </motion.div>
+                    </div>
 
                     <div className="absolute top-3 right-4 z-50 pointer-events-none">
                         <div className="flex gap-2 items-center">

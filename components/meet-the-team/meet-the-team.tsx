@@ -9,10 +9,11 @@ import {
     SectionContainerMain,
     SectionTitle,
 } from "../reusables/section";
+import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 
 const MeetTheTeam = () => {
     return (
-        <SectionContainer className="bg-accent border-retro-y py-16">
+        <SectionContainer className="bg-accent border-retro-y py-16" id={SECTION_IDS.MEET_THE_TEAM}>
             <SectionContainerHeader>
                 <SectionTitle
                     className="text-8xl text-primary"
@@ -36,11 +37,12 @@ const MeetTheTeam = () => {
             <SectionContainerMain className="flex flex-col items-center">
                 {/* Team Committees */}
                 {Object.entries(organizationBody).map(
-                    ([, { title, members }]) => (
+                    ([, { title, members }], index) => (
                         <Committee
                             key={title}
                             name={title}
                             officers={members}
+                            index={index}
                         />
                     )
                 )}

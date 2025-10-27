@@ -44,7 +44,7 @@ const HeroSection = () => {
             </SectionContainerHeader>
 
             {/* CTA  */}
-            <SectionContainerFooter className="flex flex-col w-full max-w-md items-center gap-2">
+            <SectionContainerFooter className="flex flex-col lg:flex-row w-full max-w-md lg:max-w-2xl items-center gap-2">
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}

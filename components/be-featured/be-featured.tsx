@@ -10,6 +10,7 @@ import {
     SectionTitle,
 } from "../reusables/section";
 import PostStack from "./post-stack";
+import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 
 const BeFeatured = () => {
     const dummyData = [
@@ -51,8 +52,8 @@ const BeFeatured = () => {
     ];
 
     return (
-        <SectionContainer className="bg-accent border-retro-y py-16 px-4 block">
-            <SectionContainerHeader className="sticky top-0 pb-[6rem]">
+        <SectionContainer className="bg-accent border-retro-y py-16 px-4 block" id={SECTION_IDS.BE_FEATURED}>
+            <SectionContainerHeader className="sticky top-[3rem] pb-[6rem]">
                 <SectionTitle
                     className="text-7xl lg:text-9xl text-primary"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
