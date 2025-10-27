@@ -6,7 +6,6 @@ import {
     Code,
     Folder,
     HelpCircle,
-    Mail,
     Menu,
     Star,
     Users,
@@ -43,7 +42,6 @@ const HEADER_NAVS = [
         icon: <HelpCircle />,
         scrollId: SECTION_IDS.FAQS,
     },
-    { label: "Reach Out", icon: <Mail />, scrollId: SECTION_IDS.REACH_OUT },
     { label: "Back to Top", icon: <ArrowUp />, scrollId: "back-to-top" },
 ];
 
