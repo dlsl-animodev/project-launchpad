@@ -70,7 +70,11 @@ const Header = () => {
 
 export default Header;
 
-const handleScrollIntoView = (id: string, topControl: number, behavior? : ScrollBehavior) => {
+const handleScrollIntoView = (
+    id: string,
+    topControl: number,
+    behavior?: ScrollBehavior
+) => {
     const element = document.getElementById(id);
     if (element) {
         const elementPosition =
@@ -143,7 +147,7 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
 
                         {/* Sidebar */}
                         <motion.aside
-                            className="fixed top-0 right-0 h-full w-full bg-primary shadow-xl border-retro z-50 flex flex-col justify-between"
+                            className="fixed top-0 right-0 h-full w-full bg-primary border-retro z-50 flex flex-col justify-between"
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
@@ -191,7 +195,9 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
 
                                                     if (
                                                         nav.scrollId ===
-                                                        SECTION_IDS.OUR_WORKS || nav.scrollId === SECTION_IDS.FAQS
+                                                            SECTION_IDS.OUR_WORKS ||
+                                                        nav.scrollId ===
+                                                            SECTION_IDS.FAQS
                                                     ) {
                                                         topControl = -48; //3rem (48 pixels) the height of the header
                                                     }
@@ -209,13 +215,6 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                                         </li>
                                     ))}
                                 </ul>
-                            </section>
-                            {/* credits below  */}
-                            <section className="flex flex-col items-center justify-end ">
-                                <p className="opacity-50">
-                                    &copy; {new Date().getFullYear()} Developers Society.
-                                    All rights reserved.
-                                </p>
                             </section>
                         </motion.aside>
                     </>

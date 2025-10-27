@@ -32,7 +32,7 @@ const FooterCTA = () => {
                     We will follow up with your application status.
                 </SectionDescription>
             </SectionContainerHeader>
-            <SectionContainerMain className="flex flex-col w-full max-w-md items-center gap-2">
+            <SectionContainerMain  className="flex flex-col lg:flex-row w-full max-w-md lg:max-w-2xl items-center gap-2">
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -48,8 +48,8 @@ const FooterCTA = () => {
                     className="w-full"
                 >
                     <Button
-                        className="w-full bg-accent border-black"
-                        variant="accent"
+                        className="w-full border-black "
+                        variant="secondary"
                     >
                         JOIN US NOW!
                     </Button>
