@@ -34,7 +34,6 @@ const OrganizationsTape = () => {
         >
             <SectionContainerHeader>
                 <SectionTitle
-                    className="text-6xl sm:text-7xl lg:text-8xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}

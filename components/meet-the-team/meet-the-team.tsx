@@ -16,7 +16,7 @@ const MeetTheTeam = () => {
         <SectionContainer className="bg-accent border-retro-y py-16" id={SECTION_IDS.MEET_THE_TEAM}>
             <SectionContainerHeader>
                 <SectionTitle
-                    className="text-8xl text-primary"
+                    className="text-primary text-7xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
