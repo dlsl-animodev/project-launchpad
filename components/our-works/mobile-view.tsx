@@ -20,11 +20,16 @@ const MobileView = () => {
                     className="text-8xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.3 }}
                 >
                     OUR WORKS
                 </SectionTitle>
-                <SectionDescription className="px-2">
+                <SectionDescription
+                    className="px-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                >
                     A showcase of the apps and ideas we have brought to life.
                 </SectionDescription>
             </SectionContainerHeader>

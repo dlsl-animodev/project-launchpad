@@ -12,13 +12,16 @@ import { motion } from "motion/react";
 const FooterCTA = () => {
     return (
         <SectionContainer className="h-[100dvh] flex justify-center items-center">
-            <SectionContainerHeader>
+            <SectionContainerHeader className="space-y-[2rem]">
                 <SectionTitle
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    READY AND EXCITED TO INNOVATE?
+                    READY AND EXCITED TO
+                    <span
+                        className="bg-accent text-white border-retro px-2 mx-2 border-black whitespace-nowrap"
+                    >INNOVATE?</span>
                 </SectionTitle>
                 <SectionDescription
                     className="text-center"
@@ -32,16 +35,16 @@ const FooterCTA = () => {
             <SectionContainerMain className="flex flex-col w-full max-w-md items-center gap-2">
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                     className="w-full"
                 >
                     <Button className="w-full"> COLLABORATE WITH US!</Button>
                 </motion.div>
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
                     className="w-full"
                 >
                     <Button

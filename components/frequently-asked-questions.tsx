@@ -41,7 +41,7 @@ const FrequentlyAskedQuestions = () => {
     };
 
     return (
-        <SectionContainer className="mt-[10rem]" id={SECTION_IDS.FAQS}> 
+        <SectionContainer className="mt-[10rem] px-0" id={SECTION_IDS.FAQS}> 
             <SectionContainerHeader>
                 <SectionTitle
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}

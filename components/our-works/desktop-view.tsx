@@ -20,14 +20,14 @@ const DesktopView = () => {
                     className="text-8xl lg:text-9xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.1 }}
+                    transition={{ duration: 0.3 }}
                 >
                     OUR WORKS
                 </SectionTitle>
                 <SectionDescription
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.1, delay: 0.2 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
                 >
                     A showcase of the apps and ideas we have brought to life.
                 </SectionDescription>
@@ -127,8 +127,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
                                 damping: 15,
                                 delay: 0.05,
                             }}
-                        viewport={{ amount: 0.2, margin: "-50px 0px" }}
-
+                            viewport={{ amount: 0.2, margin: "-50px 0px" }}
                         >
                             <div className="border-retro bg-primary flex items-center justify-between px-4 py-2 w-full mb-2">
                                 <p className="font-bold"> Project QoL </p>

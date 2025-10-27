@@ -6,26 +6,31 @@ import { X } from "lucide-react";
 
 const VideoSection = () => {
     return (
-        <div className="flex flex-wrap lg:flex-nowrap lg:items-center mt-[10rem] space-y-[5rem] px-[1rem]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center mt-[10rem] space-y-[2rem] lg:space-y-[5rem] px-[1rem]">
             <motion.h2
-                className="font-bold font-bebas text-7xl lg:text-9xl text-center lg:flex-1/2"
+                className="font-bold font-bebas text-7xl lg:text-9xl text-center lg:flex-1/2 leading-[1.1]"
                 initial={{ opacity: 0, y: 20, scale: 0.7 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.1 }}
+                transition={{ duration: 0.2, delay: 0.2 }}
             >
-                JOIN THE FUN, CREATIVITY, AND INNOVATION!
+                Building <br />
+                <span className="bg-accent text-white border-retro px-2 mx-2 border-black whitespace-nowrap">
+                    WHAT&apos;S NEXT
+                </span>
             </motion.h2>
 
             <div className="flex-1 lg:flex-1/2 flex justify-center">
                 <motion.section
                     className="relative bg-secondary aspect-square p-4 pt-12 border-retro"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ scale: 0, y: 30, opacity: 0.8 }}
+                    whileInView={{ scale: 1, y: 0, opacity: 1 }}
                     transition={{
                         type: "spring",
                         stiffness: 90,
                         damping: 15,
+                        delay: 0.05,
                     }}
+                    viewport={{ amount: 0.2, margin: "-50px 0px" }}
                 >
                     <div className="relative w-full h-full">
                         <video

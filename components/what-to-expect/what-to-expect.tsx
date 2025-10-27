@@ -20,8 +20,11 @@ const WhatToExpect = () => {
     ];
 
     return (
-        <SectionContainer withDefaultClasses={false} id={SECTION_IDS.FUTURE_PROJECTS}>
-          <div>
+        <SectionContainer
+            withDefaultClasses={false}
+            id={SECTION_IDS.FUTURE_PROJECTS}
+        >
+            <div>
                 <SectionContainerHeader className="sticky top-[3rem] pb-[6rem] mt-[6rem]">
                     <SectionTitle
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
@@ -57,13 +60,19 @@ const WhatToExpect = () => {
             </div>
             <SectionContainerFooter className="mb-[14rem] mt-[20rem]">
                 <SectionContainerSubHeading
-                    className="text-6xl lg:text-8xl"
+                    className="text-6xl lg:text-8xl leading-[1.2] mb-[2rem]"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    WE SHARE THE BUILD PROCESS, ARCHITECTURE PLANS, AND
-                    PROGRESS.
+                    WE
+                    <span className="bg-accent text-white border-retro px-2 mx-2 border-black">
+                        SHARE
+                    </span>{" "}
+                    THE BUILD PROCESS, ARCHITECTURE PLANS, AND{" "}
+                    <span className="bg-accent text-white border-retro px-2 mx-2 border-black">
+                        PROGRESS
+                    </span>
                 </SectionContainerSubHeading>
                 <SectionDescription
                     initial={{ opacity: 0, y: 20 }}
