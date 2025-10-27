@@ -53,6 +53,15 @@ interface HeaderProps {
 
 const Header = () => {
     const isTablet = useIsTablet();
+    const [ready, setReady] = useState(false);
+
+    useEffect(() => {
+        // Defer to next frame so initial styles paint before we transition
+        const id = requestAnimationFrame(() => setReady(true));
+        return () => cancelAnimationFrame(id);
+    }, []);
+
+    if (!ready) return null;
 
     if (!isTablet)
         return (
@@ -83,7 +92,12 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
     }, [showSidebar]);
 
     return (
-        <header className={`${BASE_HEADER_CLASSNAME} ${className}`}>
+        <motion.header
+            className={`${BASE_HEADER_CLASSNAME} ${className}`}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        >
             {/* LEFT SECTION */}
             <section className="flex items-center gap-2">
                 <Image
@@ -190,7 +204,7 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                     </>
                 )}
             </AnimatePresence>
-        </header>
+        </motion.header>
     );
 };
 
@@ -210,7 +224,12 @@ const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
     };
 
     return (
-        <header className={`${BASE_HEADER_CLASSNAME} ${className}`}>
+        <motion.header
+            className={`${BASE_HEADER_CLASSNAME} ${className}`}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        >
             {/* left section */}
             <section className="flex items-center gap-2">
                 <Image
@@ -264,6 +283,6 @@ const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
                     Back to Top
                 </button>
             </section>
-        </header>
+        </motion.header>
     );
 };
