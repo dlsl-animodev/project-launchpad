@@ -195,10 +195,17 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
 };
 
 const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
-    const handleScrollIntoView = (id: string) => {
+    const handleScrollIntoView = (id: string, topControl: number) => {
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+            const elementPosition =
+                element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition + topControl;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            });
         }
     };
 
@@ -226,7 +233,16 @@ const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
                                     key={nav.label}
                                     className="flex items-center gap-2 hover:underline cursor-pointer"
                                     onClick={() => {
-                                        handleScrollIntoView(nav.scrollId);
+                                        // some section overlaps with the header, control it here
+                                        let topControl = 0;
+                                        if (SECTION_IDS.OUR_WORKS) {
+                                            topControl = -48; //3rem (48 pixels) the height of the header
+                                        }
+
+                                        handleScrollIntoView(
+                                            nav.scrollId,
+                                            topControl
+                                        );
                                     }}
                                 >
                                     {nav.label}
