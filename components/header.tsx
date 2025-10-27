@@ -19,7 +19,7 @@ import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 import { useIsTablet } from "@/lib/use-isTablet";
 
 const BASE_HEADER_CLASSNAME =
-    "bg-secondary h-[3rem] py-2 px-4 border-retro-y relative z-50";
+    "bg-secondary h-[3rem] py-2 px-4 border-retro-y w-full z-50";
 
 interface HeaderProps {
     className?: string;
@@ -30,7 +30,7 @@ const Header = () => {
 
     if (!isTablet)
         return (
-            <DesktopHeader className="grid grid-cols-[auto_1fr_auto] items-center " />
+            <DesktopHeader className="grid grid-cols-[auto_1fr_auto] items-center fixed" />
         );
     return <MobileHeader className="flex items-center justify-between " />;
 };
