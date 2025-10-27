@@ -14,7 +14,7 @@ const Footer = () => {
             transition={{ duration: 0.3 }}
         >
             <section className="flex flex-col gap-4 justify-center items-center">
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-4">
                     <ImageHandler
                         src={ANIMODEVLOGO}
                         alt="Animo Dev Logo"
@@ -22,7 +22,7 @@ const Footer = () => {
                         height={70}
                         className="border-retro border-black"
                     />
-                    <p className="text-5xl text-center lg:text-7xl font-bold font-rubik">
+                    <p className="text-3xl md:text-5xl text-center lg:text-7xl font-bold font-rubik">
                         ANIMO.DEV
                     </p>
                 </div>
@@ -35,7 +35,7 @@ const Footer = () => {
                 <p className="mb-4 font-bold text-3xl lg:text-4xl text-left">
                     Connect with us!
                 </p>
-                <ul className="flex flex-col gap-4 font-semibold">
+                <ul className="flex flex-wrap gap-4 font-semibold">
                     <li>
                         <Link
                             href="https://github.com/dlsl-animodev"
@@ -48,7 +48,6 @@ const Footer = () => {
                                 className="p-2 border-retro bg-primary shrink-0"
                                 size={50}
                             />
-                            https://github.com/dlsl-animodev
                         </Link>
                     </li>
 
@@ -64,7 +63,6 @@ const Footer = () => {
                                 className="p-2 border-retro bg-primary shrink-0"
                                 size={50}
                             />
-                            https://www.facebook.com/profile.php?id=61577729247232
                         </Link>
                     </li>
 
@@ -80,7 +78,6 @@ const Footer = () => {
                                 className="p-2 border-retro bg-primary"
                                 size={50}
                             />
-                            https://www.instagram.com/dlsl.devsoc/
                         </Link>
                     </li>
 
@@ -94,7 +91,6 @@ const Footer = () => {
                                 className="p-2 border-retro bg-primary"
                                 size={50}
                             />
-                            animodev@mail.com (example)
                         </Link>
                     </li>
                 </ul>

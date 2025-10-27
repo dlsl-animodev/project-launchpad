@@ -14,6 +14,7 @@ const FooterCTA = () => {
         <SectionContainer className="h-[100dvh] flex justify-center items-center">
             <SectionContainerHeader className="space-y-[2rem]">
                 <SectionTitle
+                className="leading-[1.5]"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}

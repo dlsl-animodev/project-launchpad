@@ -18,7 +18,7 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
     return (
         <motion.li
             key={officer.role}
-            className="bg-secondary w-[25rem] h-[25rem] p-4 pt-12 border-retro relative"
+            className="bg-secondary aspect-square p-4 pt-12 border-retro relative"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -27,8 +27,9 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                 damping: 15,
                 delay: delay || 0,
             }}
+            viewport={{ once: true }}
         >
-            <div className="absolute top-3 right-4 z-40">
+            <div className="absolute top-3 right-4 z-30">
                 <div className="flex gap-2 items-center">
                     <Minus
                         className="bg-background  border-retro"
@@ -47,10 +48,10 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                     />
                 </div>
             </div>
-            <div className="absolute top-[-10px] bg-[#152642] border-retro  px-4 py-2">
+            <div className="absolute top-[-10px] bg-[#152642] border-retro  px-4 py-2 z-40">
                 <p className="text-white font-bold text-xl">{officer.name}</p>
             </div>
-            <Image 
+            <Image
                 src={officer.imageUrl}
                 alt={officer.name}
                 width={200}
@@ -60,15 +61,18 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
 
             {/* FLOATING BOTTOM  */}
             <motion.div
-                className="absolute bottom-[-40px] right-10 w-[60%] bg-background p-2 border-retro"
+                className="absolute bg-background p-2 border-retro
+                    right-6 lg:right-10 
+                    w-[80%] lg:w-[60%]
+                    -bottom-[120px]  
+                    lg:bottom-[-40px] "
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
+                viewport={{ once: true }}
             >
                 <div className="bg-secondary w-full border-retro p-2 py-1 flex items-center justify-between">
-                    <p className="font-bold">
-                        {officer.role}
-                    </p>
+                    <p className="font-bold">{officer.role}</p>
                     <X
                         className="bg-primary border-retro"
                         size={27}
