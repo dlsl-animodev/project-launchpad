@@ -34,7 +34,7 @@ const OrganizationsTape = () => {
         >
             <SectionContainerHeader>
                 <SectionTitle
-                    className="font-bold font-bebas text-6xl sm:text-7xl lg:text-8xl text-center tracking-wide"
+                    className="text-6xl sm:text-7xl lg:text-8xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
@@ -42,7 +42,7 @@ const OrganizationsTape = () => {
                     WE ARE OPEN TO COLLABORATIONS!
                 </SectionTitle>
                 <SectionDescription
-                    className="mt-2 text-center font-medium text-lg"
+                    className="mt-2"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.2 }}

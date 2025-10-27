@@ -20,7 +20,7 @@ const FooterCTA = () => {
                 >
                     READY AND EXCITED TO
                     <span
-                        className="bg-accent text-white border-retro px-2 mx-2 border-black whitespace-nowrap"
+                        className="bg-accent text-white border-retro px-2 mx-2 border-black whitespace-nowrap py-2" 
                     >INNOVATE?</span>
                 </SectionTitle>
                 <SectionDescription

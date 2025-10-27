@@ -10,9 +10,9 @@ const HeroSection = () => {
     return (
         <SectionContainer className="h-[100dvh] justify-center text-center">
             <SectionContainerHeader>
-                <h1 className="relative text-8xl sm:text-[7rem]  md:text-[8rem] lg:text-[10rem]">
+                <h1 className="font-gtproelium font-extrabold relative text-[5.5rem] leading-[1] sm:text-[7rem]  md:text-[8rem] lg:text-[10rem]">
                     <motion.div
-                        className="font-extrabold font-bebas "
+                        className="font-extrabold  "
                         initial={{ y: 60, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{
@@ -23,7 +23,7 @@ const HeroSection = () => {
                         DEVELOPERS
                     </motion.div>
                     <motion.div
-                        className="font-extrabold font-bebas"
+                        className="font-extrabold "
                         initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
@@ -36,7 +36,7 @@ const HeroSection = () => {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="max-w-xl mx-auto text-lg md:text-xl text-center"
+                    className="max-w-2xl mx-auto text-xl md:text-2xl text-center font-altone"
                 >
                     &quot;Fostering a collaborative environment where students
                     from all background can learn, create, grow together.&quot;

@@ -18,7 +18,7 @@ import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 import { useIsTablet } from "@/lib/use-isTablet";
 
 const BASE_HEADER_CLASSNAME =
-    "bg-secondary h-[3rem] py-2 px-4 border-retro-y w-full fixed z-50";
+    "bg-secondary h-[3rem] py-2 px-4 border-retro-y w-full fixed z-50 font-righteous font-normal tracking-wide";
 
 const HEADER_NAVS = [
     { label: "Our Works", icon: <Code />, scrollId: SECTION_IDS.OUR_WORKS },
@@ -123,7 +123,7 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                     height={30}
                     className="border-retro border-black"
                 />
-                <p className="font-bold">ANIMO.DEV</p>
+                <p>ANIMO.DEV</p>
             </section>
 
             {/* RIGHT SECTION */}
@@ -241,7 +241,7 @@ const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
                     height={30}
                     className="border-retro border-black"
                 />
-                <p className="font-bold">ANIMO.DEV</p>
+                <p>ANIMO.DEV</p>
             </section>
 
             {/* center */}
@@ -276,7 +276,7 @@ const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
             {/* right section */}
             <section className="flex justify-end">
                 <button
-                    className="font-semibold hover:underline"
+                    className="hover:underline"
                     onClick={() => {
                         // handle scroll to top
                         window.scrollTo({ top: 0, behavior: "smooth" });

@@ -8,13 +8,13 @@ const VideoSection = () => {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center mt-[10rem] space-y-[2rem] lg:space-y-[5rem] px-[1rem]">
             <motion.h2
-                className="font-bold font-bebas text-7xl lg:text-9xl text-center lg:flex-1/2 leading-[1.1]"
+                className="font-gtproelium text-7xl lg:text-9xl text-center lg:flex-1/2 leading-[1.1]"
                 initial={{ opacity: 0, y: 20, scale: 0.7 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.2, delay: 0.2 }}
             >
                 Building <br />
-                <span className="bg-accent text-white border-retro px-2 mx-2 border-black whitespace-nowrap">
+                <span className="bg-accent text-white border-retro px-2 mx-2 py-2 border-black whitespace-nowrap">
                     WHAT&apos;S NEXT
                 </span>
             </motion.h2>
