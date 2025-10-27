@@ -6,8 +6,8 @@ import Link from "next/link";
 import { motion } from "motion/react";
 
 const Footer = () => {
-     return (
-        <motion.footer 
+    return (
+        <motion.footer
             className="bg-secondary border-retro-y py-8 px-4 grid grid-cols-1 lg:grid-cols-2 gap-[4rem]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -22,10 +22,13 @@ const Footer = () => {
                         height={70}
                         className="border-retro border-black"
                     />
-                    <p className="text-5xl text-center lg:text-7xl font-bold font-rubik">ANIMO.DEV</p>
+                    <p className="text-5xl text-center lg:text-7xl font-bold font-rubik">
+                        ANIMO.DEV
+                    </p>
                 </div>
                 <p className="font-medium text-base lg:text-xl text-center">
-                    © 2025 Developers Society. All rights reserved.
+                    &copy; {new Date().getFullYear()} Developers Society. All
+                    rights reserved.
                 </p>
             </section>
             <section className="flex flex-col items-center">

@@ -28,7 +28,7 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                 delay: delay || 0,
             }}
         >
-            <div className="absolute top-3 right-4 z-50">
+            <div className="absolute top-3 right-4 z-40">
                 <div className="flex gap-2 items-center">
                     <Minus
                         className="bg-background  border-retro"

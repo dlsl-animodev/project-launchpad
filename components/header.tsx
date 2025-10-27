@@ -184,7 +184,7 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                                                 ) {
                                                     window.scrollTo({
                                                         top: 0,
-                                                        behavior: "smooth",
+                                                        behavior: "instant",
                                                     });
                                                 } else {
                                                     let topControl = 0;
@@ -213,7 +213,7 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                             {/* credits below  */}
                             <section className="flex flex-col items-center justify-end ">
                                 <p className="opacity-50">
-                                    &copy; {new Date().getFullYear()} Animo.Dev.
+                                    &copy; {new Date().getFullYear()} Developers Society.
                                     All rights reserved.
                                 </p>
                             </section>

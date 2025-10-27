@@ -40,7 +40,7 @@ const VideoSection = () => {
                         />
                     </div>
 
-                    <div className="absolute top-3 right-4 z-50 pointer-events-none">
+                    <div className="absolute top-3 right-4 z-40 pointer-events-none">
                         <div className="flex gap-2 items-center">
                             <Minus
                                 className="bg-primary border-retro"
