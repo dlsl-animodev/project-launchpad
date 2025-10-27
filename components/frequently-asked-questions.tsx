@@ -13,24 +13,24 @@ import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 const FrequentlyAskedQuestions = () => {
     const dummyQuestions = [
         {
-            question: "How do I submit my project?",
-            answer: "You can submit your project by clicking on the 'Share your entry' button and filling out the submission form.",
+            question: "Sample Question",
+            answer: "Sample answer goes here.",
         },
         {
-            question: "What are the criteria for being featured?",
-            answer: "Projects are selected based on creativity, innovation, and community impact.",
+            question: "Sample Question",
+            answer: "Sample answer goes here.",
         },
         {
-            question: "Can I update my submission after it's been sent?",
-            answer: "Yes, you can update your submission by contacting our support team with your project details.",
+       question: "Sample Question",
+            answer: "Sample answer goes here.",
         },
         {
-            question: "How often are new projects featured?",
-            answer: "New projects are featured on a monthly basis, so be sure to check back regularly!",
+        question: "Sample Question",
+            answer: "Sample answer goes here.",
         },
         {
-            question: "Is there a limit to how many projects I can submit?",
-            answer: "There is no limit to the number of projects you can submit. Feel free to share all your innovative ideas!",
+        question: "Sample Question",
+            answer: "Sample answer goes here.",
         },
     ];
 
@@ -41,7 +41,7 @@ const FrequentlyAskedQuestions = () => {
     };
 
     return (
-        <SectionContainer className="mt-[10rem]" id={SECTION_IDS.FAQS}> 
+        <SectionContainer className="mt-[10rem] px-0" id={SECTION_IDS.FAQS}> 
             <SectionContainerHeader>
                 <SectionTitle
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
@@ -65,7 +65,7 @@ const FrequentlyAskedQuestions = () => {
                         >
                             <div className="flex justify-between items-center">
                                 <p className="font-bold text-lg">
-                                    {item.question}
+                                    {item.question} {index}
                                 </p>
                                 <motion.span
                                     animate={{
@@ -91,7 +91,7 @@ const FrequentlyAskedQuestions = () => {
                                         className="overflow-hidden"
                                     >
                                         <p className="mt-3 text-neutral-700">
-                                            {item.answer}
+                                            {item.answer} {index}
                                         </p>
                                     </motion.div>
                                 )}

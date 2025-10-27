@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "motion/react";
 import Committee from "./committee";
 import { organizationBody } from "@/lib/predefined-objects";
 import {
     SectionContainer,
     SectionContainerHeader,
     SectionContainerMain,
+    SectionDescription,
     SectionTitle,
 } from "../reusables/section";
 import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
@@ -23,8 +23,8 @@ const MeetTheTeam = () => {
                 >
                     MEET THE TEAM
                 </SectionTitle>
-                <motion.p
-                    className="text-white text-center"
+                <SectionDescription
+                    className="text-primary text-center"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.2 }}
@@ -32,7 +32,7 @@ const MeetTheTeam = () => {
                     Our team is a diverse group of passionate dedicated students
                     fostering a collaborative environment where students from
                     all backgrounds can thrive and innovate together.
-                </motion.p>
+                </SectionDescription>
             </SectionContainerHeader>
             <SectionContainerMain className="flex flex-col items-center">
                 {/* Team Committees */}

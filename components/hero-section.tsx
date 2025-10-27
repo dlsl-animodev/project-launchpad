@@ -60,8 +60,8 @@ const HeroSection = () => {
                     className="w-full"
                 >
                     <Button
-                        className="w-full bg-accent border-black"
-                        variant="accent"
+                        className="w-full border-black"
+                        variant="secondary"
                     >
                         JOIN US NOW!
                     </Button>

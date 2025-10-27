@@ -20,11 +20,16 @@ const MobileView = () => {
                     className="text-8xl"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.3 }}
                 >
                     OUR WORKS
                 </SectionTitle>
-                <SectionDescription className='px-2'>
+                <SectionDescription
+                    className="px-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                >
                     A showcase of the apps and ideas we have brought to life.
                 </SectionDescription>
             </SectionContainerHeader>
@@ -45,9 +50,9 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = ({ project }) => {
     return (
-        <section className="h-[150vh] relative w-full ">
+        <section className="w-full space-y-[2rem] pb-[8rem]">
             {/* Sticky Preview */}
-            <div className="sticky top-[3rem] z-10">
+            <div>
                 <motion.section
                     className="bg-accent border-retro flex flex-col items-center justify-between p-4 mx-auto"
                     initial={{ scale: 0, y: 30, opacity: 0.8 }}
@@ -58,7 +63,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
                         damping: 15,
                         delay: 0.05,
                     }}
-                    viewport={{ amount: 0.6 }}
+                    viewport={{ amount: 0.2, margin: "-50px 0px" }}
                 >
                     <div className="border-retro bg-primary flex items-center justify-between px-4 py-2 w-full mb-2">
                         <p className="font-bold">{project.title}</p>
@@ -85,7 +90,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
             </div>
 
             {/* Project Info */}
-            <div className="relative z-0 mt-[8rem]">
+            <div className="relative z-0 ">
                 <motion.h2
                     className="text-5xl  mx-4 relative z-20"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
@@ -141,10 +146,10 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
                 </motion.div>
 
                 <motion.p
-                    className="mx-4 mt-6 font-semibold text-lg h-screen relative z-20"
+                    className="mx-4 mt-6 font-semibold text-lg z-20"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.15, delay: 0.1 }}
+                    transition={{ duration: 0.3, delay: 0.4 }}
                 >
                     {project.description}
                 </motion.p>
