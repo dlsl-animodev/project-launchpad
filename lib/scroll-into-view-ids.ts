@@ -4,5 +4,4 @@ export const SECTION_IDS = {
     FUTURE_PROJECTS: "what-to-expect",
     BE_FEATURED: "be-featured",
     FAQS: "faqs",
-    REACH_OUT: "reach-out",
 }
