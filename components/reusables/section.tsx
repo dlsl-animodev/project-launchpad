@@ -104,7 +104,7 @@ const SectionDescription: React.FC<SectionDescriptionProps> = ({
         <motion.p
             {...props}
             className={twMerge(
-                "text-center text-lg md:text-2xl lg:text-3xl font-medium",
+                "text-center text-lg md:text-2xl lg:text-3xl font-medium font-altone",
                 className
             )}
         >

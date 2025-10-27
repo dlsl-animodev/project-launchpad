@@ -31,7 +31,7 @@ const sizeMap: Record<Size, string> = {
 };
 
 const base =
-    "inline-flex items-center justify-center font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 border-retro";
+    "font-righteous tracking-wide inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 border-retro";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     (

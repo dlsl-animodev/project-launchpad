@@ -1,8 +1,15 @@
 import SmoothScroll from "@/components/smooth-scroll";
 import type { Metadata } from "next";
-import { Pacifico, Inter, Rubik } from "next/font/google";
+import { Pacifico, Inter, Rubik, Righteous } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+
+const righteous = Righteous({
+    variable: "--font-righteous",
+    subsets: ["latin"],
+    weight: "400",
+    display: "swap",
+});
 
 const gtProelium = localFont({
     src: [
@@ -31,6 +38,33 @@ const gtProelium = localFont({
     display: "swap",
 });
 
+const altone = localFont({
+    src: [
+        {
+            path: "../public/fonts/altone/Altone Trial-Regular.ttf",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../public/fonts/altone/Altone Trial-Oblique.ttf",
+            weight: "400",
+            style: "italic",
+        },
+        {
+            path: "../public/fonts/altone/Altone Trial-Bold.ttf",
+            weight: "700",
+            style: "normal",
+        },
+        {
+            path: "../public/fonts/altone/Altone Trial-BoldOblique.ttf",
+            weight: "700",
+            style: "italic",
+        },
+    ],
+    variable: "--font-altone",
+    display: "swap",
+});
+
 // removed Poppins and Boldonse per request
 
 const pacifico = Pacifico({
@@ -39,7 +73,6 @@ const pacifico = Pacifico({
     weight: "400",
     display: "swap",
 });
-
 
 const inter = Inter({
     variable: "--font-inter",
@@ -68,9 +101,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body
-                className={`${pacifico.variable} ${gtProelium.variable} ${inter.variable} ${rubik.variable}`}
-            >
+           <body
+    className={`${pacifico.variable} ${gtProelium.variable} ${altone.variable} ${inter.variable} ${rubik.variable} ${righteous.variable}`}
+>
                 <SmoothScroll>{children}</SmoothScroll>
             </body>
         </html>
