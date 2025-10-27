@@ -48,7 +48,7 @@ interface ProjectProps {
 }
 const Project: React.FC<ProjectProps> = ({ project }) => {
     return (
-        <div className="h-[200vh] w-full">
+        <div className="h-[150vh] w-full pb-[5rem]">
             <div className="flex flex-col-reverse lg:flex-row w-full h-full">
                 <div className="w-1/2">
                     <div className="h-screen flex flex-col mx-[4rem] justify-center">
@@ -127,7 +127,8 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
                                 damping: 15,
                                 delay: 0.05,
                             }}
-                            viewport={{ amount: 0.6 }}
+                        viewport={{ amount: 0.2, margin: "-50px 0px" }}
+
                         >
                             <div className="border-retro bg-primary flex items-center justify-between px-4 py-2 w-full mb-2">
                                 <p className="font-bold"> Project QoL </p>

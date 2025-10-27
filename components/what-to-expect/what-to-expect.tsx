@@ -36,7 +36,7 @@ const WhatToExpect = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 }}
                     >
-                        View our ongoing projects!
+                        View our future events and projects!
                     </SectionDescription>
                 </SectionContainerHeader>
 
