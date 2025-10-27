@@ -60,7 +60,7 @@ const WhatToExpect = () => {
             </div>
             <SectionContainerFooter className="mb-[14rem] mt-[20rem]">
                 <SectionContainerSubHeading
-                    className="text-6xl lg:text-8xl leading-[1.4] mb-[2rem]"
+                    className="text-5xl sm:text-6xl lg:text-8xl leading-[1.4] mb-[2rem]"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
