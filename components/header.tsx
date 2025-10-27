@@ -72,6 +72,20 @@ const Header = () => {
 
 export default Header;
 
+const handleScrollIntoView = (id: string, topControl: number, behavior? : ScrollBehavior) => {
+    const element = document.getElementById(id);
+    if (element) {
+        const elementPosition =
+            element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition + topControl;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: behavior || "smooth",
+        });
+    }
+};
+
 const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
     const [showSidebar, setShowSidebar] = useState(false);
     const toggleSidebar = () => setShowSidebar((prev) => !prev);
@@ -175,15 +189,20 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                                                         behavior: "smooth",
                                                     });
                                                 } else {
-                                                    const element =
-                                                        document.getElementById(
-                                                            nav.scrollId
-                                                        );
-                                                    if (element) {
-                                                        element.scrollIntoView({
-                                                            behavior: "instant",
-                                                        });
+                                                    let topControl = 0;
+
+                                                    if (
+                                                        nav.scrollId ===
+                                                        SECTION_IDS.OUR_WORKS || nav.scrollId === SECTION_IDS.FAQS
+                                                    ) {
+                                                        topControl = -48; //3rem (48 pixels) the height of the header
                                                     }
+
+                                                    handleScrollIntoView(
+                                                        nav.scrollId,
+                                                        topControl,
+                                                        "instant"
+                                                    );
                                                 }
                                             }}
                                         >
@@ -209,20 +228,6 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
 };
 
 const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
-    const handleScrollIntoView = (id: string, topControl: number) => {
-        const element = document.getElementById(id);
-        if (element) {
-            const elementPosition =
-                element.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition + topControl;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth",
-            });
-        }
-    };
-
     return (
         <motion.header
             className={`${BASE_HEADER_CLASSNAME} ${className}`}
