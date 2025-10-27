@@ -3,12 +3,13 @@ import { motion } from "motion/react";
 import { Minus } from "lucide-react";
 import { Square } from "lucide-react";
 import { X } from "lucide-react";
+import { SectionTitle } from "./reusables/section";
 
 const VideoSection = () => {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center mt-[10rem] space-y-[2rem] lg:space-y-[5rem] px-[1rem]">
-            <motion.h2
-                className="font-gtproelium text-7xl lg:text-9xl text-center lg:flex-1/2 leading-[1.1]"
+            <SectionTitle
+                className="lg:flex-1/2 leading-[1.1]"
                 initial={{ opacity: 0, y: 20, scale: 0.7 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.2, delay: 0.2 }}
@@ -17,7 +18,7 @@ const VideoSection = () => {
                 <span className="bg-accent text-white border-retro px-2 mx-2 py-2 border-black whitespace-nowrap">
                     WHAT&apos;S NEXT
                 </span>
-            </motion.h2>
+            </SectionTitle>
 
             <div className="flex-1 lg:flex-1/2 flex justify-center">
                 <motion.section
