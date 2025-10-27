@@ -3,10 +3,7 @@ import { motion } from "motion/react";
 
 import {
     SectionContainer,
-    SectionContainerHeader,
     SectionContainerMain,
-    SectionDescription,
-    SectionTitle,
 } from "./reusables/section";
 
 const OrganizationsTape = () => {
@@ -27,30 +24,11 @@ const OrganizationsTape = () => {
 
     return (
         <SectionContainer
-            className="w-full overflow-hidden bg-[#F37145] py-[4rem] border-retro-y"
+            className="w-full overflow-hidden bg-[#F37145] border-retro-y gap-4 py-[2rem]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            <SectionContainerHeader>
-                <SectionTitle
-                    initial={{ opacity: 0, y: 20, scale: 0.7 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                >
-                    WE ARE OPEN TO COLLABORATIONS!
-                </SectionTitle>
-                <SectionDescription
-                    className="mt-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                >
-                    Send us a message and let us bring your organization on
-                    board.
-                </SectionDescription>
-            </SectionContainerHeader>
-
             <SectionContainerMain>
                 <div className="relative w-full overflow-hidden">
                     <motion.div
