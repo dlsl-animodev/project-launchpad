@@ -56,6 +56,32 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
         };
     }, [showSidebar]);
 
+    const navs = [
+        { label: "Our Works", icon: <Code />, scrollId: SECTION_IDS.OUR_WORKS },
+        {
+            label: "The Team",
+            icon: <Users />,
+            scrollId: SECTION_IDS.MEET_THE_TEAM,
+        },
+        {
+            label: "Future Projects",
+            icon: <Folder />,
+            scrollId: SECTION_IDS.FUTURE_PROJECTS,
+        },
+        {
+            label: "Featured",
+            icon: <Star />,
+            scrollId: SECTION_IDS.BE_FEATURED,
+        },
+        {
+            label: "Frequently Asked Questions",
+            icon: <HelpCircle />,
+            scrollId: SECTION_IDS.FAQS,
+        },
+        { label: "Reach Out", icon: <Mail />, scrollId: SECTION_IDS.REACH_OUT },
+        { label: "Back to Top", icon: <ArrowUp />, scrollId: "back-to-top" },
+    ];
+
     return (
         <header className={`${BASE_HEADER_CLASSNAME} ${className}`}>
             {/* LEFT SECTION */}
@@ -120,28 +146,37 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                                     </button>
                                 </div>
                                 <ul className="p-4 space-y-6 font-medium">
-                                    <li className="hover:text-primary cursor-pointer flex items-center gap-3">
-                                        <Code /> Our Works
-                                    </li>
-                                    <li className="hover:text-primary cursor-pointer flex items-center gap-3">
-                                        <Users /> The Team
-                                    </li>
-                                    <li className="hover:text-primary cursor-pointer flex items-center gap-3">
-                                        <Folder /> Future Projects
-                                    </li>
-                                    <li className="hover:text-primary cursor-pointer flex items-center gap-3">
-                                        <Star /> Featured
-                                    </li>
-                                    <li className="hover:text-primary cursor-pointer flex items-center gap-3">
-                                        <HelpCircle /> Frequently Asked
-                                        Questions
-                                    </li>
-                                    <li className="hover:text-primary cursor-pointer flex items-center gap-3">
-                                        <Mail /> Reach Out
-                                    </li>
-                                    <li className="hover:text-primary cursor-pointer flex items-center gap-3">
-                                        <ArrowUp /> Back to Top
-                                    </li>
+                                    {navs.map((nav) => (
+                                        <li
+                                            key={nav.label}
+                                            className="flex items-center gap-4 hover:underline"
+                                            onClick={() => {
+                                                toggleSidebar();
+                                                if (
+                                                    nav.scrollId ===
+                                                    "back-to-top"
+                                                ) {
+                                                    window.scrollTo({
+                                                        top: 0,
+                                                        behavior: "smooth",
+                                                    });
+                                                } else {
+                                                    const element =
+                                                        document.getElementById(
+                                                            nav.scrollId
+                                                        );
+                                                    if (element) {
+                                                        element.scrollIntoView({
+                                                            behavior: "instant",
+                                                        });
+                                                    }
+                                                }
+                                            }}
+                                        >
+                                            {nav.icon}
+                                            {nav.label}
+                                        </li>
+                                    ))}
                                 </ul>
                             </section>
                             {/* credits below  */}
@@ -227,7 +262,8 @@ const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
 
             {/* right section */}
             <section className="flex justify-end">
-                <button className="font-semibold hover:underline"
+                <button
+                    className="font-semibold hover:underline"
                     onClick={() => {
                         // handle scroll to top
                         window.scrollTo({ top: 0, behavior: "smooth" });
