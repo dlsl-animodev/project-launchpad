@@ -19,7 +19,7 @@ const Committee: React.FC<CommitteeProps> = ({ name, officers, index }) => {
             </motion.h3>
 
             <ul
-                className={`flex flex-wrap justify-center gap-12 w-full space-y-6`}
+                className={`flex flex-wrap justify-center gap-12 space-y-6 w-full max-w-[90vw] mx-auto`}
             >
                 {officers.map((officer, index) => (
                     <OfficerWindow key={officer.name} officer={officer} delay={index * 0.05} />

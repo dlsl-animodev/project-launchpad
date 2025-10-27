@@ -18,7 +18,7 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
     return (
         <motion.li
             key={officer.role}
-            className="bg-secondary w-[25rem] h-[25rem] p-4 pt-12 border-retro relative"
+            className="bg-secondary aspect-square p-4 pt-12 border-retro relative"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
