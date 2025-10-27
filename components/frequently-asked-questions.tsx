@@ -8,6 +8,7 @@ import {
     SectionContainerMain,
     SectionTitle,
 } from "./reusables/section";
+import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 
 const FrequentlyAskedQuestions = () => {
     const dummyQuestions = [
@@ -40,7 +41,7 @@ const FrequentlyAskedQuestions = () => {
     };
 
     return (
-        <SectionContainer className="mt-[10rem]">
+        <SectionContainer className="mt-[10rem]" id={SECTION_IDS.FAQS}> 
             <SectionContainerHeader>
                 <SectionTitle
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}

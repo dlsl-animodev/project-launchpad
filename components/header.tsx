@@ -15,6 +15,7 @@ import {
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 import { useIsTablet } from "@/lib/use-isTablet";
 
 const BASE_HEADER_CLASSNAME =
@@ -27,7 +28,10 @@ interface HeaderProps {
 const Header = () => {
     const isTablet = useIsTablet();
 
-    if (!isTablet) return <DesktopHeader className="grid grid-cols-[auto_1fr_auto] items-center " />;
+    if (!isTablet)
+        return (
+            <DesktopHeader className="grid grid-cols-[auto_1fr_auto] items-center " />
+        );
     return <MobileHeader className="flex items-center justify-between " />;
 };
 
@@ -156,6 +160,13 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
 };
 
 const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
+    const handleScrollIntoView = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <header className={`${BASE_HEADER_CLASSNAME} ${className}`}>
             {/* left section */}
@@ -173,18 +184,55 @@ const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
             {/* center */}
             <section className="flex justify-center overflow-hidden">
                 <ul className="flex items-center gap-10 font-medium whitespace-nowrap">
-                    <li>Our Works</li>
-                    <li>The Team</li>
-                    <li>Future Projects</li>
-                    <li>Featured</li>
-                    <li>FAQs</li>
-                    <li>Reach Out</li>
+                    <li
+                        onClick={() =>
+                            handleScrollIntoView(SECTION_IDS.OUR_WORKS)
+                        }
+                    >
+                        Our Works
+                    </li>
+                    <li
+                        onClick={() =>
+                            handleScrollIntoView(SECTION_IDS.MEET_THE_TEAM)
+                        }
+                    >
+                        The Team
+                    </li>
+                    <li
+                        onClick={() =>
+                            handleScrollIntoView(SECTION_IDS.FUTURE_PROJECTS)
+                        }
+                    >
+                        Future Projects
+                    </li>
+                    <li
+                        onClick={() =>
+                            handleScrollIntoView(SECTION_IDS.BE_FEATURED)
+                        }
+                    >
+                        Featured
+                    </li>
+                    <li onClick={() => handleScrollIntoView(SECTION_IDS.FAQS)}>
+                        FAQs
+                    </li>
+                    <li
+                        onClick={() =>
+                            handleScrollIntoView(SECTION_IDS.REACH_OUT)
+                        }
+                    >
+                        Reach Out
+                    </li>
                 </ul>
             </section>
 
             {/* right section */}
             <section className="flex justify-end">
-                <button className="font-semibold hover:underline">
+                <button className="font-semibold hover:underline"
+                    onClick={() => {
+                        // handle scroll to top
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                >
                     Back to Top
                 </button>
             </section>

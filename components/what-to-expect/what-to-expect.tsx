@@ -1,3 +1,4 @@
+import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 import {
     SectionContainer,
     SectionContainerFooter,
@@ -19,7 +20,7 @@ const WhatToExpect = () => {
     ];
 
     return (
-        <SectionContainer withDefaultClasses={false}>
+        <SectionContainer withDefaultClasses={false} id={SECTION_IDS.FUTURE_PROJECTS}>
           <div>
                 <SectionContainerHeader className="sticky top-0 pb-[6rem]">
                     <SectionTitle

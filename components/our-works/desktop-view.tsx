@@ -10,10 +10,11 @@ import {
     SectionDescription,
     SectionTitle,
 } from "../reusables/section";
+import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 
 const DesktopView = () => {
     return (
-        <SectionContainer>
+        <SectionContainer id={SECTION_IDS.OUR_WORKS}>
             <SectionContainerHeader>
                 <SectionTitle
                     className="text-8xl lg:text-9xl"
