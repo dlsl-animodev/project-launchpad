@@ -21,6 +21,32 @@ import { useIsTablet } from "@/lib/use-isTablet";
 const BASE_HEADER_CLASSNAME =
     "bg-secondary h-[3rem] py-2 px-4 border-retro-y w-full fixed z-50";
 
+const HEADER_NAVS = [
+    { label: "Our Works", icon: <Code />, scrollId: SECTION_IDS.OUR_WORKS },
+    {
+        label: "The Team",
+        icon: <Users />,
+        scrollId: SECTION_IDS.MEET_THE_TEAM,
+    },
+    {
+        label: "Future Projects",
+        icon: <Folder />,
+        scrollId: SECTION_IDS.FUTURE_PROJECTS,
+    },
+    {
+        label: "Featured",
+        icon: <Star />,
+        scrollId: SECTION_IDS.BE_FEATURED,
+    },
+    {
+        label: "Frequently Asked Questions",
+        icon: <HelpCircle />,
+        scrollId: SECTION_IDS.FAQS,
+    },
+    { label: "Reach Out", icon: <Mail />, scrollId: SECTION_IDS.REACH_OUT },
+    { label: "Back to Top", icon: <ArrowUp />, scrollId: "back-to-top" },
+];
+
 interface HeaderProps {
     className?: string;
 }
@@ -55,32 +81,6 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
             document.body.style.overflow = "auto";
         };
     }, [showSidebar]);
-
-    const navs = [
-        { label: "Our Works", icon: <Code />, scrollId: SECTION_IDS.OUR_WORKS },
-        {
-            label: "The Team",
-            icon: <Users />,
-            scrollId: SECTION_IDS.MEET_THE_TEAM,
-        },
-        {
-            label: "Future Projects",
-            icon: <Folder />,
-            scrollId: SECTION_IDS.FUTURE_PROJECTS,
-        },
-        {
-            label: "Featured",
-            icon: <Star />,
-            scrollId: SECTION_IDS.BE_FEATURED,
-        },
-        {
-            label: "Frequently Asked Questions",
-            icon: <HelpCircle />,
-            scrollId: SECTION_IDS.FAQS,
-        },
-        { label: "Reach Out", icon: <Mail />, scrollId: SECTION_IDS.REACH_OUT },
-        { label: "Back to Top", icon: <ArrowUp />, scrollId: "back-to-top" },
-    ];
 
     return (
         <header className={`${BASE_HEADER_CLASSNAME} ${className}`}>
@@ -146,7 +146,7 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                                     </button>
                                 </div>
                                 <ul className="p-4 space-y-6 font-medium">
-                                    {navs.map((nav) => (
+                                    {HEADER_NAVS.map((nav) => (
                                         <li
                                             key={nav.label}
                                             className="flex items-center gap-4 hover:underline"
@@ -219,44 +219,20 @@ const DesktopHeader: React.FC<HeaderProps> = ({ className }) => {
             {/* center */}
             <section className="flex justify-center overflow-hidden">
                 <ul className="flex items-center gap-10 font-medium whitespace-nowrap">
-                    <li
-                        onClick={() =>
-                            handleScrollIntoView(SECTION_IDS.OUR_WORKS)
-                        }
-                    >
-                        Our Works
-                    </li>
-                    <li
-                        onClick={() =>
-                            handleScrollIntoView(SECTION_IDS.MEET_THE_TEAM)
-                        }
-                    >
-                        The Team
-                    </li>
-                    <li
-                        onClick={() =>
-                            handleScrollIntoView(SECTION_IDS.FUTURE_PROJECTS)
-                        }
-                    >
-                        Future Projects
-                    </li>
-                    <li
-                        onClick={() =>
-                            handleScrollIntoView(SECTION_IDS.BE_FEATURED)
-                        }
-                    >
-                        Featured
-                    </li>
-                    <li onClick={() => handleScrollIntoView(SECTION_IDS.FAQS)}>
-                        FAQs
-                    </li>
-                    <li
-                        onClick={() =>
-                            handleScrollIntoView(SECTION_IDS.REACH_OUT)
-                        }
-                    >
-                        Reach Out
-                    </li>
+                    {HEADER_NAVS.map(
+                        (nav) =>
+                            nav.label !== "Back to Top" && (
+                                <li
+                                    key={nav.label}
+                                    className="flex items-center gap-2 hover:underline cursor-pointer"
+                                    onClick={() => {
+                                        handleScrollIntoView(nav.scrollId);
+                                    }}
+                                >
+                                    {nav.label}
+                                </li>
+                            )
+                    )}
                 </ul>
             </section>
 

@@ -4,7 +4,6 @@ import { Minus } from "lucide-react";
 import { Square } from "lucide-react";
 import { X } from "lucide-react";
 
-// scrolling animation on scale and y axis
 const VideoSection = () => {
     return (
         <div className="flex flex-wrap lg:flex-nowrap lg:items-center mt-[10rem] space-y-[5rem] px-[1rem]">
