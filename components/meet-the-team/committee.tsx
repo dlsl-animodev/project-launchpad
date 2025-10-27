@@ -18,6 +18,7 @@ const Committee: React.FC<CommitteeProps> = ({ name, officers, index }) => {
                 initial={{ opacity: 0, y: 20, scale: 0.7 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
             >
                 {name.toUpperCase()}
             </SectionContainerSubHeading>
