@@ -13,7 +13,7 @@ import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 
 const MeetTheTeam = () => {
     return (
-        <SectionContainer className="bg-accent border-retro-y py-16" id={SECTION_IDS.MEET_THE_TEAM}>
+        <SectionContainer className="bg-accent border-retro-y py-[8rem] lg:py-[4rem]" id={SECTION_IDS.MEET_THE_TEAM}>
             <SectionContainerHeader>
                 <SectionTitle
                     className="text-primary text-7xl"
