@@ -18,7 +18,7 @@ import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 import { useIsTablet } from "@/lib/use-isTablet";
 
 const BASE_HEADER_CLASSNAME =
-    "bg-secondary h-[3rem] py-2 px-4 border-retro-y w-full fixed z-50 font-righteous font-normal tracking-wide";
+    "bg-secondary h-[3rem] py-2 px-4 border-retro-b w-full fixed z-50 font-righteous font-normal tracking-wide";
 
 const HEADER_NAVS = [
     { label: "Our Works", icon: <Code />, scrollId: SECTION_IDS.OUR_WORKS },
