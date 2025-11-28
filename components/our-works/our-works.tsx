@@ -3,13 +3,15 @@ import DesktopView from "./desktop-view";
 
 import { useIsTablet } from "@/lib/use-isTablet";
 
+import { projects } from "./projects";
+
 const OurWorks = () => {
     const isTablet = useIsTablet();
 
     if (isTablet) {
-        return <MobileView />;
+        return <MobileView projects={projects} />;
     } else {
-        return <DesktopView />;
+        return <DesktopView projects={projects} />;
     }
 };
 

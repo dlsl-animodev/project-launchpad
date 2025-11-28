@@ -2,7 +2,7 @@ import { Figma, Github, Globe2, X, Minus, Square } from "lucide-react";
 import { motion } from "motion/react";
 import React from "react";
 import ImageHandler from "../image-handler";
-import { projects, ProjectType } from "./projects";
+import { ProjectType } from "./projects";
 import {
     SectionContainer,
     SectionContainerHeader,
@@ -11,10 +11,32 @@ import {
     SectionTitle,
 } from "../reusables/section";
 import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
+import ProjectNotFound from "../project-not-found";
 
-const MobileView = () => {
+interface MobileViewProps {
+    projects: ProjectType[];
+}
+
+const MobileView: React.FC<MobileViewProps> = ({ projects }) => {
+    const renderProjects = () => {
+        if (projects.length === 0) {
+            return <ProjectNotFound />;
+        } else {
+            return (
+                <div className="px-4">
+                    {projects.map((project, index) => (
+                        <Project key={index} project={project} />
+                    ))}
+                </div>
+            );
+        }
+    };
+
     return (
-        <SectionContainer className="px-0" id={SECTION_IDS.OUR_WORKS}>
+        <SectionContainer
+            className="px-0 block space-y-12"
+            id={SECTION_IDS.OUR_WORKS}
+        >
             <SectionContainerHeader>
                 <SectionTitle
                     className="text-8xl"
@@ -33,11 +55,7 @@ const MobileView = () => {
                     A showcase of the apps and ideas we have brought to life.
                 </SectionDescription>
             </SectionContainerHeader>
-            <SectionContainerMain className="px-4">
-                {projects.map((project, index) => (
-                    <Project key={index} project={project} />
-                ))}
-            </SectionContainerMain>
+            <SectionContainerMain>{renderProjects()}</SectionContainerMain>
         </SectionContainer>
     );
 };

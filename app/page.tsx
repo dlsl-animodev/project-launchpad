@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import BeFeatured from "@/components/be-featured/be-featured";
 import Footer from "@/components/footer";
