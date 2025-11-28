@@ -1,7 +1,7 @@
 import { Figma, Github, Globe2, Minus, Square, X } from "lucide-react";
 import { motion } from "motion/react";
 
-import { projects, ProjectType } from "./projects";
+import { ProjectType } from "./projects";
 import ImageHandler from "../image-handler";
 import {
     SectionContainer,
@@ -11,8 +11,23 @@ import {
     SectionTitle,
 } from "../reusables/section";
 import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
+import ProjectNotFound from "../project-not-found";
 
-const DesktopView = () => {
+interface DesktopViewProps {
+    projects: ProjectType[];
+}
+
+const DesktopView: React.FC<DesktopViewProps> = ({ projects }) => {
+    const renderProjects = () => {
+        if (projects.length === 0) {
+            return <ProjectNotFound />;
+        } else {
+            return projects.map((project, index) => (
+                <Project key={index} project={project} />
+            ));
+        }
+    };
+
     return (
         <SectionContainer id={SECTION_IDS.OUR_WORKS}>
             <SectionContainerHeader>
@@ -32,11 +47,7 @@ const DesktopView = () => {
                     A showcase of the apps and ideas we have brought to life.
                 </SectionDescription>
             </SectionContainerHeader>
-            <SectionContainerMain>
-                {projects.map((project, index) => (
-                    <Project key={index} project={project} />
-                ))}
-            </SectionContainerMain>
+            <SectionContainerMain>{renderProjects()}</SectionContainerMain>
         </SectionContainer>
     );
 };
