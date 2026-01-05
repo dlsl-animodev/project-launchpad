@@ -24,17 +24,17 @@ const MeetTheTeam = () => {
                     MEET THE TEAM
                 </SectionTitle>
                 <SectionDescription
-                    className="text-primary text-center"
+                    className="text-[#AEAEAE] text-center"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.2 }}
                 >
-                    Our team is a diverse group of passionate dedicated students
+                    Our team is a diverse group of dedicated students
                     fostering a collaborative environment where students from
                     all backgrounds can thrive and innovate together.
                 </SectionDescription>
             </SectionContainerHeader>
-            <SectionContainerMain className="flex flex-col items-center">
+            <SectionContainerMain className="w-full space-y-4 flex flex-col items-center">
                 {/* Team Committees */}
                 {Object.entries(organizationBody).map(
                     ([, { title, members }], index) => (
