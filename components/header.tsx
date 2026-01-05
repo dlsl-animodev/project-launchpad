@@ -147,7 +147,7 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
 
                         {/* Sidebar */}
                         <motion.aside
-                            className="fixed top-0 right-0 h-full w-full bg-primary border-retro z-50 flex flex-col justify-between"
+                            className="fixed top-0 right-0 h-full w-full bg-accent text-white border-black border-retro z-50 flex flex-col justify-between"
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
@@ -159,7 +159,7 @@ const MobileHeader: React.FC<HeaderProps> = ({ className }) => {
                         >
                             {/* main content  */}
                             <section>
-                                <div className="flex justify-between items-center py-[0.57rem] px-4 border-b-4">
+                                <div className="flex justify-between items-center py-[0.57rem] px-4 border-b-4 border-black">
                                     <div className="flex items-center gap-2">
                                         <Image
                                             src={ANIMODEVLOGO}
