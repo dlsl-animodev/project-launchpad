@@ -1,7 +1,5 @@
 import { motion } from "motion/react";
 
-import { Minus } from "lucide-react";
-import { Square } from "lucide-react";
 import { X } from "lucide-react";
 import { SectionTitle } from "./reusables/section";
 
@@ -22,7 +20,7 @@ const VideoSection = () => {
 
             <div className="flex-1 lg:flex-1/2 flex justify-center">
                 <motion.section
-                    className="relative bg-secondary aspect-square p-1 pt-9 border-retro"
+                    className="relative bg-secondary aspect-square p-1 pt-8 border-retro"
                     initial={{ scale: 0, y: 30, opacity: 0.8 }}
                     whileInView={{ scale: 1, y: 0, opacity: 1 }}
                     transition={{
@@ -36,7 +34,7 @@ const VideoSection = () => {
                     <div className="relative w-full h-full">
                         <video
                             src="/sample-video.mp4"
-                            className="w-full h-full object-cover border-retro"
+                            className="w-full h-full object-cover border-2"
                             autoPlay
                             loop
                             muted
@@ -46,24 +44,13 @@ const VideoSection = () => {
                         />
                     </div>
 
-                    <div className="absolute top-1 right-1 z-40 pointer-events-none">
-                        <div className="flex gap-2 items-center">
-                            <Minus
-                                className="bg-primary border-retro"
-                                size={27}
-                                color="black"
-                            />
-                            <Square
-                                className="bg-primary border-retro p-1"
-                                size={27}
-                                color="black"
-                            />
-                            <X
-                                className="bg-primary border-retro"
-                                size={27}
-                                color="black"
-                            />
-                        </div>
+                    {/* Window Controls  */}
+                    <div className="absolute top-1.5 right-1 z-40 pointer-events-none">
+                        <X
+                            className="bg-primary border-[#AC610C] border-r-2 border-b-2"
+                            size={20}
+                            color="black"
+                        />
                     </div>
                 </motion.section>
             </div>
