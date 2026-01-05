@@ -35,7 +35,7 @@ const SectionContainerHeader: React.FC<SectionProps> = ({
     children,
     className,
 }) => {
-    return <div className={className}>{children}</div>;
+    return <div className={twMerge(`space-y-4`, className)}>{children}</div>;
 };
 
 // SECTION MAIN
