@@ -4,24 +4,31 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import OfficerWindow, { OfficerType } from "./officer-window";
-import { SectionContainerSubHeading } from "../reusables/section";
 import Button from "../ui/button";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import {  ChevronUp } from "lucide-react";
 
 interface CommitteeProps {
     name: string;
     officers: OfficerType[];
     index: number;
+    isLast?: boolean;
 }
-const Committee: React.FC<CommitteeProps> = ({ name, officers, index }) => {
-    const [open, setIsOpen] = useState(false);
+const Committee: React.FC<CommitteeProps> = ({ name, officers, isLast }) => {
+    const [open, setOpen] = useState(false);
 
     const handleOpenCommittee = () => {
-        setIsOpen(!open);
+        setOpen(!open);
     };
 
+    // if this is the element that is open, add more margin below so other buttons do not overlap 
+    // the opened committee (unless it's the last one)
     return (
-        <>
+        <div
+            className={`
+                w-full max-w-[90vw] mx-auto
+                ${open && !isLast ? "mb-[10rem] lg:mb-[10rem]" : open && isLast ? "mb-20" : "mb-0"}
+                `}
+        >
             <Button
                 initial={{ opacity: 0, y: 20, scale: 0.7 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -55,7 +62,7 @@ const Committee: React.FC<CommitteeProps> = ({ name, officers, index }) => {
                     </motion.ul>
                 )}
             </AnimatePresence>
-        </>
+        </div>
     );
 };
 

@@ -34,15 +34,16 @@ const MeetTheTeam = () => {
                     all backgrounds can thrive and innovate together.
                 </SectionDescription>
             </SectionContainerHeader>
-            <SectionContainerMain className="w-full space-y-4 flex flex-col items-center">
+            <SectionContainerMain className="w-full gap-4 flex flex-col items-center">
                 {/* Team Committees */}
                 {Object.entries(organizationBody).map(
-                    ([, { title, members }], index) => (
+                    ([, { title, members }], index, array) => (
                         <Committee
                             key={title}
                             name={title}
                             officers={members}
                             index={index}
+                            isLast={index === array.length - 1}
                         />
                     )
                 )}
