@@ -18,7 +18,7 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
     return (
         <motion.li
             key={officer.role}
-            className="bg-secondary w-full md:w-auto  aspect-auto p-4 pt-12 border-retro relative"
+            className="bg-secondary w-full md:w-auto aspect-auto p-1 pt-12 border-retro relative"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -29,6 +29,8 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
             }}
             viewport={{ once: true }}
         >
+
+            {/* Window Buttons */}
             <div className="absolute top-3 right-4 z-30">
                 <div className="flex gap-2 items-center">
                     <Minus
@@ -48,9 +50,13 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                     />
                 </div>
             </div>
-            <div className="absolute top-[-10px] bg-[#152642] border-retro  px-4 py-2 z-40">
+
+            {/* Officer Name  */}
+            <div className="absolute top-[-10px] bg-[#152642] px-4 py-2 z-40">
                 <p className="text-white font-bold text-xl">{officer.name}</p>
             </div>
+
+            {/* Officer Image  */}
             <Image
                 src={officer.imageUrl}
                 alt={officer.name}
@@ -61,7 +67,7 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
 
             {/* FLOATING BOTTOM  */}
             <motion.div
-                className="absolute bg-background p-2 border-retro
+                className="absolute bg-background p-1 border-retro
                     right-6 lg:right-10 
                     w-[80%] lg:w-[60%]
                     -bottom-[120px]  
@@ -71,6 +77,7 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                 transition={{ duration: 0.3, delay: 0.2 }}
                 viewport={{ once: true }}
             >
+                {/* Role Header */}
                 <div className="bg-secondary w-full border-retro p-2 py-1 flex items-center justify-between">
                     <p className="font-bold">{officer.role}</p>
                     <X
@@ -79,6 +86,8 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
                         color="black"
                     />
                 </div>
+
+                {/* Role Description */}
                 <p className="text-sm mt-2">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
