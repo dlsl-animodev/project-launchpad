@@ -5,7 +5,7 @@ import React from "react";
 
 const ProjectNotFound = () => {
     return (
-        <div className="relative bg-accent h-[25rem] lg:h-[40rem] lg:w-[50rem] mx-[1rem] border-retro p-2 flex flex-col justify-between">
+        <div className="relative bg-accent h-[15rem] lg:h-[40rem] lg:w-[50rem] mx-[1rem] border-retro p-2 flex flex-col justify-between">
             {/* Header  */}
             <div className="bg-primary flex justify-between items-center px-2 py-1">
                 <p className="font-bold">404 NOT FOUND</p>
