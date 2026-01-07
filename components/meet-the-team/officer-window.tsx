@@ -18,7 +18,7 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
     return (
         <motion.li
             key={officer.role}
-            className="bg-secondary w-full md:w-auto aspect-auto p-1 pt-12 border-retro relative"
+            className="bg-secondary w-full md:w-auto aspect-auto p-1 pt-9 border-retro relative"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -29,23 +29,22 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
             }}
             viewport={{ once: true }}
         >
-
             {/* Window Buttons */}
-            <div className="absolute top-3 right-4 z-30">
-                <div className="flex gap-2 items-center">
+            <div className="absolute top-2 right-1 z-30">
+                <div className="flex gap-1 items-center">
                     <Minus
-                        className="bg-background  border-retro"
-                        size={27}
+                        className="bg-background  border-r-3 border-b-3 border-[#946112]"
+                        size={20}
                         color="black"
                     />
                     <Square
-                        className="bg-background  border-retro p-1"
-                        size={27}
+                        className="bg-background p-0.5  border-r-3 border-b-3 border-[#946112]"
+                        size={20}
                         color="black"
                     />
                     <X
-                        className="bg-background  border-retro"
-                        size={27}
+                        className="bg-background  border-r-3 border-b-3 border-[#946112]"
+                        size={20}
                         color="black"
                     />
                 </div>
@@ -53,7 +52,7 @@ const OfficerWindow: React.FC<OffierWindowProps> = ({ officer, delay }) => {
 
             {/* Officer Name  */}
             <div className="absolute top-[-10px] bg-[#152642] px-4 py-2 z-40">
-                <p className="text-white font-bold text-xl">{officer.name}</p>
+                <p className="text-white font-bold text-sm">{officer.name}</p>
             </div>
 
             {/* Officer Image  */}
