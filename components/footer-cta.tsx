@@ -14,15 +14,12 @@ const FooterCTA = () => {
         <SectionContainer className="h-[100dvh] flex justify-center items-center">
             <SectionContainerHeader className="space-y-[2rem]">
                 <SectionTitle
-                className="leading-[1.5]"
+                    className="leading-[1.2]"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    READY AND EXCITED TO
-                    <span
-                        className="bg-accent text-white border-retro px-2 mx-2 border-black whitespace-nowrap py-2" 
-                    >INNOVATE?</span>
+                    READY AND EXCITED TO INNOVATE?
                 </SectionTitle>
                 <SectionDescription
                     className="text-center"
@@ -33,7 +30,7 @@ const FooterCTA = () => {
                     We will follow up with your application status.
                 </SectionDescription>
             </SectionContainerHeader>
-            <SectionContainerMain  className="flex flex-col lg:flex-row w-full max-w-md lg:max-w-2xl items-center gap-2">
+            <SectionContainerMain className="flex flex-col lg:flex-row w-full max-w-md lg:max-w-2xl items-center gap-2">
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
