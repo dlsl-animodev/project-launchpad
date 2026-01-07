@@ -52,7 +52,7 @@ const BeFeatured = () => {
     ];
 
     return (
-        <SectionContainer className="bg-accent border-retro-y py-16 px-4 block" id={SECTION_IDS.BE_FEATURED}>
+        <SectionContainer className="bg-accent border-retro-y py-16 px-4" id={SECTION_IDS.BE_FEATURED}>
             <SectionContainerHeader className="sticky top-[5rem] pb-[6rem]">
                 <SectionTitle
                     className="text-7xl lg:text-9xl text-primary"
