@@ -57,7 +57,7 @@ const FrequentlyAskedQuestions = () => {
                     {dummyQuestions.map((item, index) => (
                         <motion.li
                             key={index}
-                            className="border-retro py-6 px-4 cursor-pointer"
+                            className={`border-t-2 py-6 px-4 cursor-pointer ${index == dummyQuestions.length - 1 ? 'border-b-2' : ''}`}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.2, delay: index * 0.1 }}
