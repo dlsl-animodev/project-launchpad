@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { SECTION_IDS } from "@/lib/scroll-into-view-ids";
 import {
     SectionContainer,
@@ -11,6 +13,8 @@ import {
 import FolderStack from "./folder-stack";
 
 const WhatToExpect = () => {
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
     const projects = [
         { title: "Project QoL", fillColor: "#FFBE0B" },
         { title: "Project Harmony", fillColor: "#FB5607" },
@@ -24,7 +28,8 @@ const WhatToExpect = () => {
             withDefaultClasses={false}
             id={SECTION_IDS.FUTURE_PROJECTS}
         >
-            <div>
+            <div className="flex flex-col gap-10">
+                {/* The Title of the Folder Stack  */}
                 <SectionContainerHeader>
                     <SectionTitle
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
@@ -46,13 +51,16 @@ const WhatToExpect = () => {
                 {/* The Folder Stack  */}
                 <SectionContainerMain className="relative h-fit">
                     <div className="w-full max-w-4xl mx-auto h-full flex items-start justify-center">
-                        <div className="w-full relative">
+                        <div className="w-full relative ">
                             {projects.map((project, index) => (
                                 <FolderStack
                                     key={index}
                                     index={index}
                                     title={project.title}
                                     fillColor={project.fillColor}
+                                    isExpanded={expandedIndex === index}
+                                    onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                                    expandedIndex={expandedIndex}
                                 />
                             ))}
                         </div>
@@ -60,7 +68,8 @@ const WhatToExpect = () => {
                 </SectionContainerMain>
             </div>
             {/* After the Folder Stack Message  */}
-            <SectionContainerFooter className="mb-[3rem] mt-[45rem]">
+            {/* Set top margin here because the folder stack above is absolutely positioned */}
+            <SectionContainerFooter className="mb-[3rem] mt-[30rem]">
                 <SectionContainerSubHeading
                     className="text-5xl sm:text-6xl lg:text-8xl leading-[1.4] mb-[2rem]"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
