@@ -59,7 +59,13 @@ const WhatToExpect = () => {
                                     title={project.title}
                                     fillColor={project.fillColor}
                                     isExpanded={expandedIndex === index}
-                                    onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                                    onClick={() =>
+                                        setExpandedIndex(
+                                            expandedIndex === index
+                                                ? null
+                                                : index
+                                        )
+                                    }
                                     expandedIndex={expandedIndex}
                                 />
                             ))}
@@ -69,14 +75,14 @@ const WhatToExpect = () => {
             </div>
             {/* After the Folder Stack Message  */}
             {/* Set top margin here because the folder stack above is absolutely positioned */}
-            <SectionContainerFooter 
+            <SectionContainerFooter
                 className="mb-[3rem]"
                 animate={{
-                    marginTop: expandedIndex !== null ? "52rem" : "30rem"
+                    marginTop: expandedIndex !== null ? "52rem" : "30rem",
                 }}
                 transition={{
                     duration: 0.5,
-                    ease: [0.4, 0, 0.2, 1]
+                    ease: [0.4, 0, 0.2, 1],
                 }}
             >
                 <SectionContainerSubHeading
@@ -85,14 +91,7 @@ const WhatToExpect = () => {
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    WE
-                    <span className="bg-accent text-white border-retro px-2 mx-2 border-black py-2 ">
-                        SHARE
-                    </span>{" "}
-                    THE BUILD PROCESS, ARCHITECTURE PLANS, AND{" "}
-                    <span className="bg-accent text-white border-retro px-2 mx-2 border-black py-2" >
-                        PROGRESS
-                    </span>
+                    WE SHARE THE BUILD PROCESS, ARCHITECTURE PLANS, AND PROGRESS
                 </SectionContainerSubHeading>
                 <SectionDescription
                     initial={{ opacity: 0, y: 20 }}
