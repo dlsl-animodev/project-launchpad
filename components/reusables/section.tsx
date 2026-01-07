@@ -50,8 +50,16 @@ const SectionContainerMain: React.FC<SectionProps> = ({
 const SectionContainerFooter: React.FC<SectionProps> = ({
     children,
     className,
+    ...props
 }) => {
-    return <div className={className}>{children}</div>;
+    return (
+        <motion.section
+            className={className}
+            {...props}
+        >
+            {children}
+        </motion.section>
+    )
 };
 
 // SECTION TITLE

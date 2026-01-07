@@ -69,7 +69,16 @@ const WhatToExpect = () => {
             </div>
             {/* After the Folder Stack Message  */}
             {/* Set top margin here because the folder stack above is absolutely positioned */}
-            <SectionContainerFooter className="mb-[3rem] mt-[30rem]">
+            <SectionContainerFooter 
+                className="mb-[3rem]"
+                animate={{
+                    marginTop: expandedIndex !== null ? "52rem" : "30rem"
+                }}
+                transition={{
+                    duration: 0.5,
+                    ease: [0.4, 0, 0.2, 1]
+                }}
+            >
                 <SectionContainerSubHeading
                     className="text-5xl sm:text-6xl lg:text-8xl leading-[1.4] mb-[2rem]"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
