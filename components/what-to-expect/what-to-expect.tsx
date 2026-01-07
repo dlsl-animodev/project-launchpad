@@ -25,7 +25,7 @@ const WhatToExpect = () => {
             id={SECTION_IDS.FUTURE_PROJECTS}
         >
             <div>
-                <SectionContainerHeader className="sticky top-[5rem] pb-[6rem] mt-[6rem]">
+                <SectionContainerHeader>
                     <SectionTitle
                         initial={{ opacity: 0, y: 20, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -43,6 +43,7 @@ const WhatToExpect = () => {
                     </SectionDescription>
                 </SectionContainerHeader>
 
+                {/* The Folder Stack  */}
                 <SectionContainerMain className="relative h-fit">
                     <div className="w-full max-w-4xl mx-auto h-full flex items-start justify-center">
                         <div className="w-full relative">
@@ -58,7 +59,8 @@ const WhatToExpect = () => {
                     </div>
                 </SectionContainerMain>
             </div>
-            <SectionContainerFooter className="mb-[14rem] mt-[20rem]">
+            {/* After the Folder Stack Message  */}
+            <SectionContainerFooter className="mb-[3rem] mt-[45rem]">
                 <SectionContainerSubHeading
                     className="text-5xl sm:text-6xl lg:text-8xl leading-[1.4] mb-[2rem]"
                     initial={{ opacity: 0, y: 20, scale: 0.7 }}
